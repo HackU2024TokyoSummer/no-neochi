@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HealthKit
 
 struct ScheduleListView: View {
     let sampleSchedules = [
@@ -74,6 +75,12 @@ struct ScheduleListView: View {
             .sheet(isPresented: $isAddEvent) {
                 AddEventView()
                     .presentationDetents([.medium])
+            }
+            .onAppear(){
+               Task{
+       //    await  CheckNeochi().sendPermistion()
+                }
+                CheckNeochi().checkPermistion()
             }
         }
     }
