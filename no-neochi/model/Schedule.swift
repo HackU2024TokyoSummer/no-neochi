@@ -6,10 +6,11 @@
 //
 
 import Foundation
-struct Schedule: Identifiable{
+
+struct Schedule: Identifiable {
     let id = UUID()
     var date: Date
     var time: Date
     var billing = Int()
-    
+
 }

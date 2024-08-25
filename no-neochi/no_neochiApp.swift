@@ -11,7 +11,7 @@ import SwiftUI
 struct no_neochiApp: App {
     var body: some Scene {
         WindowGroup {
-          ButtomNavigationView()
+            ButtomNavigationView()
         }
     }
 }
