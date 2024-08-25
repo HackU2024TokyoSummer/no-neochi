@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ButtomNavigationView: View {
     var body: some View {
-        TabView{
+        TabView {
             ScheduleListView()
                 .tabItem {
                     Image("calendar")

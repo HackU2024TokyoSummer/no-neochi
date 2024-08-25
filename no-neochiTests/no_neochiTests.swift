@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import no_neochi
 
 final class no_neochiTests: XCTestCase {
