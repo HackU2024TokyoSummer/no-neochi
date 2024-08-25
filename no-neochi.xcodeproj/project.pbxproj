@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720EF40A2C7AB3790065D375 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EF4092C7AB3790065D375 /* LoginView.swift */; };
 		72A8E9062C779A3C0058AA93 /* no_neochiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9052C779A3C0058AA93 /* no_neochiApp.swift */; };
-		72A8E9082C779A3C0058AA93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9072C779A3C0058AA93 /* ContentView.swift */; };
+		72A8E9082C779A3C0058AA93 /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9072C779A3C0058AA93 /* mainView.swift */; };
 		72A8E90A2C779A3D0058AA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72A8E9092C779A3D0058AA93 /* Assets.xcassets */; };
 		72A8E90D2C779A3D0058AA93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72A8E90C2C779A3D0058AA93 /* Preview Assets.xcassets */; };
 		72A8E9172C779A3D0058AA93 /* no_neochiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9162C779A3D0058AA93 /* no_neochiTests.swift */; };
 		72A8E9212C779A3D0058AA93 /* no_neochiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9202C779A3D0058AA93 /* no_neochiUITests.swift */; };
 		72A8E9232C779A3D0058AA93 /* no_neochiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9222C779A3D0058AA93 /* no_neochiUITestsLaunchTests.swift */; };
+		72A8E9302C795B160058AA93 /* ButtomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E92F2C795B160058AA93 /* ButtomNavigationView.swift */; };
+		72A8E9332C79C4E30058AA93 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9322C79C4E30058AA93 /* Schedule.swift */; };
+		72D776182C7A456F00CBA371 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D776172C7A456F00CBA371 /* AddEventView.swift */; };
+		72EB85D02C7A4C9D00C673E4 /* formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB85CF2C7A4C9D00C673E4 /* formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		720EF4092C7AB3790065D375 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		72A8E9022C779A3C0058AA93 /* no-neochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "no-neochi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A8E9052C779A3C0058AA93 /* no_neochiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = no_neochiApp.swift; sourceTree = "<group>"; };
-		72A8E9072C779A3C0058AA93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		72A8E9072C779A3C0058AA93 /* mainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
 		72A8E9092C779A3D0058AA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72A8E90C2C779A3D0058AA93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		72A8E9122C779A3D0058AA93 /* no-neochiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "no-neochiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +50,10 @@
 		72A8E91C2C779A3D0058AA93 /* no-neochiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "no-neochiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A8E9202C779A3D0058AA93 /* no_neochiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = no_neochiUITests.swift; sourceTree = "<group>"; };
 		72A8E9222C779A3D0058AA93 /* no_neochiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = no_neochiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		72A8E92F2C795B160058AA93 /* ButtomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtomNavigationView.swift; sourceTree = "<group>"; };
+		72A8E9322C79C4E30058AA93 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		72D776172C7A456F00CBA371 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		72EB85CF2C7A4C9D00C673E4 /* formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		720EF4072C7AB3290065D375 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				720EF4092C7AB3790065D375 /* LoginView.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		720EF4082C7AB3310065D375 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72D776192C7A457A00CBA371 /* main */,
+				72D776162C7A454D00CBA371 /* add-event */,
+				720EF4072C7AB3290065D375 /* login */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		72A8E8F92C779A3C0058AA93 = {
 			isa = PBXGroup;
 			children = (
@@ -94,10 +122,13 @@
 		72A8E9042C779A3C0058AA93 /* no-neochi */ = {
 			isa = PBXGroup;
 			children = (
+				720EF4082C7AB3310065D375 /* View */,
+				72A8E9312C79C48D0058AA93 /* model */,
 				72A8E9052C779A3C0058AA93 /* no_neochiApp.swift */,
-				72A8E9072C779A3C0058AA93 /* ContentView.swift */,
 				72A8E9092C779A3D0058AA93 /* Assets.xcassets */,
 				72A8E90B2C779A3D0058AA93 /* Preview Content */,
+				72A8E92F2C795B160058AA93 /* ButtomNavigationView.swift */,
+				72EB85CF2C7A4C9D00C673E4 /* formatter.swift */,
 			);
 			path = "no-neochi";
 			sourceTree = "<group>";
@@ -125,6 +156,30 @@
 				72A8E9222C779A3D0058AA93 /* no_neochiUITestsLaunchTests.swift */,
 			);
 			path = "no-neochiUITests";
+			sourceTree = "<group>";
+		};
+		72A8E9312C79C48D0058AA93 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				72A8E9322C79C4E30058AA93 /* Schedule.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		72D776162C7A454D00CBA371 /* add-event */ = {
+			isa = PBXGroup;
+			children = (
+				72D776172C7A456F00CBA371 /* AddEventView.swift */,
+			);
+			path = "add-event";
+			sourceTree = "<group>";
+		};
+		72D776192C7A457A00CBA371 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				72A8E9072C779A3C0058AA93 /* mainView.swift */,
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +312,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72A8E9082C779A3C0058AA93 /* ContentView.swift in Sources */,
+				72EB85D02C7A4C9D00C673E4 /* formatter.swift in Sources */,
+				720EF40A2C7AB3790065D375 /* LoginView.swift in Sources */,
+				72D776182C7A456F00CBA371 /* AddEventView.swift in Sources */,
+				72A8E9302C795B160058AA93 /* ButtomNavigationView.swift in Sources */,
+				72A8E9082C779A3C0058AA93 /* mainView.swift in Sources */,
+				72A8E9332C79C4E30058AA93 /* Schedule.swift in Sources */,
 				72A8E9062C779A3C0058AA93 /* no_neochiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
