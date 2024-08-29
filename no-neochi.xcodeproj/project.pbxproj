@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		720EF40A2C7AB3790065D375 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EF4092C7AB3790065D375 /* LoginView.swift */; };
+		72873B122C7AF90B00BA75E8 /* CheckNeochi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72873B112C7AF90B00BA75E8 /* CheckNeochi.swift */; };
+		72873B162C7C064A00BA75E8 /* Alerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72873B152C7C064A00BA75E8 /* Alerm.swift */; };
 		72A8E9062C779A3C0058AA93 /* no_neochiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9052C779A3C0058AA93 /* no_neochiApp.swift */; };
 		72A8E9082C779A3C0058AA93 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9072C779A3C0058AA93 /* ScheduleListView.swift */; };
 		72A8E90A2C779A3D0058AA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72A8E9092C779A3D0058AA93 /* Assets.xcassets */; };
@@ -40,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		720EF4092C7AB3790065D375 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		72873B112C7AF90B00BA75E8 /* CheckNeochi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNeochi.swift; sourceTree = "<group>"; };
+		72873B132C7AFAE600BA75E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		72873B142C7AFD2E00BA75E8 /* no-neochi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "no-neochi.entitlements"; sourceTree = "<group>"; };
+		72873B152C7C064A00BA75E8 /* Alerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerm.swift; sourceTree = "<group>"; };
 		72A8E9022C779A3C0058AA93 /* no-neochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "no-neochi.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A8E9052C779A3C0058AA93 /* no_neochiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = no_neochiApp.swift; sourceTree = "<group>"; };
 		72A8E9072C779A3C0058AA93 /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
@@ -122,6 +128,8 @@
 		72A8E9042C779A3C0058AA93 /* no-neochi */ = {
 			isa = PBXGroup;
 			children = (
+				72873B142C7AFD2E00BA75E8 /* no-neochi.entitlements */,
+				72873B132C7AFAE600BA75E8 /* Info.plist */,
 				720EF4082C7AB3310065D375 /* View */,
 				72A8E9312C79C48D0058AA93 /* model */,
 				72A8E9052C779A3C0058AA93 /* no_neochiApp.swift */,
@@ -129,6 +137,8 @@
 				72A8E90B2C779A3D0058AA93 /* Preview Content */,
 				72A8E92F2C795B160058AA93 /* ButtomNavigationView.swift */,
 				72EB85CF2C7A4C9D00C673E4 /* formatter.swift */,
+				72873B112C7AF90B00BA75E8 /* CheckNeochi.swift */,
+				72873B152C7C064A00BA75E8 /* Alerm.swift */,
 			);
 			path = "no-neochi";
 			sourceTree = "<group>";
@@ -312,6 +322,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72873B122C7AF90B00BA75E8 /* CheckNeochi.swift in Sources */,
+				72873B162C7C064A00BA75E8 /* Alerm.swift in Sources */,
 				72EB85D02C7A4C9D00C673E4 /* formatter.swift in Sources */,
 				720EF40A2C7AB3790065D375 /* LoginView.swift in Sources */,
 				72D776182C7A456F00CBA371 /* AddEventView.swift in Sources */,
@@ -479,11 +491,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "no-neochi/no-neochi.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"no-neochi/Preview Content\"";
+				DEVELOPMENT_TEAM = TVH687AC7F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "no-neochi/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "寝落ちの検知に使用しますyo";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "寝落ちの検知に使用しますyo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -494,7 +512,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hosonuma.sakki.no-neochi";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hosonuma.sakki.no-neochi-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -507,11 +525,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "no-neochi/no-neochi.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"no-neochi/Preview Content\"";
+				DEVELOPMENT_TEAM = TVH687AC7F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "no-neochi/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "寝落ちの検知に使用しますyo";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "寝落ちの検知に使用しますyo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -522,7 +546,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hosonuma.sakki.no-neochi";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hosonuma.sakki.no-neochi-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
