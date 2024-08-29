@@ -12,53 +12,65 @@ import HealthKitUI
 class CheckNeochi {
     let healthStore = HKHealthStore()
     func checkPermistion(){
-   
-            let readTypes = Set([
-                HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!
-            ])
-             
-            healthStore.requestAuthorization(toShare: [], read: readTypes, completion: { success, error in
-                if success == false {
-                    print("データにアクセスできません")
-                    return
-                }
-            })
+        
+        let readTypes = Set([
+            HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!
+        ])
+        
+        healthStore.requestAuthorization(toShare: [], read: readTypes, completion: { success, error in
+            if success == false {
+                print("データにアクセスできません")
+                return
+            }
+            
+        })
     }
     func setObserver() {
-            let sampleType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!
-            var observerQuery = HKObserverQuery(sampleType: sampleType, predicate: nil, updateHandler: { query, completionHandler, error in
-                if error != nil { return }
-                // 睡眠データの追加が検知された場合にここに来る
-                print("ねました")
-                // 直近一時間の睡眠データを取得
-                let query = HKSampleQuery(sampleType: sampleType,
-                                          predicate: HKQuery.predicateForSamples(withStart: Calendar.current.date(byAdding: .hour, value: -1, to: Date())!, end: Date(), options: []),
-                                          limit: HKObjectQueryNoLimit,
-                                          sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: true)]){ (query, results, error) in
-                    
-                    guard error == nil else {
-                        completionHandler()
-                        print("error");
-                        return
-                        
-                    }
-                
-                    if let sample = results as? [HKCategorySample] {
-                        // 追加された睡眠データを用いた処理を書く
-                    }
-                }
-            })
+        let sampleType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
+        let observerQuery = HKObserverQuery(sampleType: sampleType, predicate: nil) { [weak self] query, completionHandler, error in
+            guard let self = self else { return }
+            if error != nil {
+                print("Observer Query Error: \(error!.localizedDescription)")
+                completionHandler()
+                return
+            }
             
-            healthStore.execute(observerQuery)
+            self.checkRecentSleepData()
+            completionHandler()
+        }
+        
+        healthStore.execute(observerQuery)
+        
+        healthStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate) { success, error in
+            if let error = error {
+                print("Background Delivery Error: \(error.localizedDescription)")
+            }
+            print("Background Delivery Enabled: \(success)")
+        }
+    }
+    
+    func checkRecentSleepData() {
+        let sampleType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
+        let predicate = HKQuery.predicateForSamples(withStart: Calendar.current.date(byAdding: .hour, value: -1, to: Date())!, end: Date(), options: [])
+        
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)]) { [weak self] (_, results, error) in
+            guard let self = self, let samples = results as? [HKCategorySample] else {
+                print("Query Error: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
             
-            // バックグランドでのヘルスケアデータの更新検知を有効にする
-            healthStore.enableBackgroundDelivery(for: sampleType, frequency: .immediate) { success, error in
-                if let error = error {
-                    print(error)
+            for sample in samples {
+                if sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue {
+                    DispatchQueue.main.async {
+                        let components = Calendar.current.dateComponents([.calendar, .year, .month, .day], from: Date())
+                        Alerm().sendNotification(DateComponents: components)
+                        print("ベッドにいます！")
+                    }
+                    return
                 }
-                print(success)
             }
         }
-
-
+        
+        healthStore.execute(query)
+    }
 }

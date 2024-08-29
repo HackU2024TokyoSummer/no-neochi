@@ -70,6 +70,7 @@ struct AddEventView: View {
                 Button(
                     action: {
                         //保存
+                        dismiss()
                     },
                     label: {
                         Text("登録")
