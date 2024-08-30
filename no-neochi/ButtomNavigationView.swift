@@ -14,7 +14,7 @@ struct ButtomNavigationView: View {
                 .tabItem {
                     Image("calendar")
                 }
-            Text("home")
+           HistoryView()
                 .tabItem {
                     Image("time")
                 }

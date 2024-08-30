@@ -27,6 +27,9 @@
 		72E2D9242C81799A00D69270 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D9232C81799A00D69270 /* APIError.swift */; };
 		72E2D9262C81814D00D69270 /* CreateScedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D9252C81814D00D69270 /* CreateScedule.swift */; };
 		72E2D9282C818EFF00D69270 /* GetSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D9272C818EFF00D69270 /* GetSchedule.swift */; };
+		72E2D92B2C81EEC400D69270 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D92A2C81EEC400D69270 /* HistoryView.swift */; };
+		72E2D92D2C81F22600D69270 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D92C2C81F22600D69270 /* History.swift */; };
+		72E2D92F2C81FDED00D69270 /* GetHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D92E2C81FDED00D69270 /* GetHistory.swift */; };
 		72EB85D02C7A4C9D00C673E4 /* formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB85CF2C7A4C9D00C673E4 /* formatter.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,9 @@
 		72E2D9232C81799A00D69270 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		72E2D9252C81814D00D69270 /* CreateScedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScedule.swift; sourceTree = "<group>"; };
 		72E2D9272C818EFF00D69270 /* GetSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSchedule.swift; sourceTree = "<group>"; };
+		72E2D92A2C81EEC400D69270 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		72E2D92C2C81F22600D69270 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		72E2D92E2C81FDED00D69270 /* GetHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHistory.swift; sourceTree = "<group>"; };
 		72EB85CF2C7A4C9D00C673E4 /* formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +104,7 @@
 				72E2D9252C81814D00D69270 /* CreateScedule.swift */,
 				72E2D9272C818EFF00D69270 /* GetSchedule.swift */,
 				72E2D9232C81799A00D69270 /* APIError.swift */,
+				72E2D92E2C81FDED00D69270 /* GetHistory.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -166,6 +173,7 @@
 			children = (
 				72A8E9322C79C4E30058AA93 /* Schedule.swift */,
 				7238BDAF2C815637007F4A4A /* User.swift */,
+				72E2D92C2C81F22600D69270 /* History.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -189,6 +197,7 @@
 		72E2D9292C81EE9600D69270 /* history */ = {
 			isa = PBXGroup;
 			children = (
+				72E2D92A2C81EEC400D69270 /* HistoryView.swift */,
 			);
 			path = history;
 			sourceTree = "<group>";
@@ -270,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7238BDAD2C80C3D1007F4A4A /* NetworkConstants.swift in Sources */,
+				72E2D92F2C81FDED00D69270 /* GetHistory.swift in Sources */,
 				7238BDB02C815637007F4A4A /* User.swift in Sources */,
 				7238BDA52C806C18007F4A4A /* SignUpTextView.swift in Sources */,
 				72873B122C7AF90B00BA75E8 /* CheckNeochi.swift in Sources */,
@@ -281,7 +291,9 @@
 				72EB85D02C7A4C9D00C673E4 /* formatter.swift in Sources */,
 				720EF40A2C7AB3790065D375 /* LoginView.swift in Sources */,
 				72D776182C7A456F00CBA371 /* AddEventView.swift in Sources */,
+				72E2D92B2C81EEC400D69270 /* HistoryView.swift in Sources */,
 				72A8E9302C795B160058AA93 /* ButtomNavigationView.swift in Sources */,
+				72E2D92D2C81F22600D69270 /* History.swift in Sources */,
 				72A8E9082C779A3C0058AA93 /* ScheduleListView.swift in Sources */,
 				7238BDAB2C8080F5007F4A4A /* SignUp.swift in Sources */,
 				72E2D9242C81799A00D69270 /* APIError.swift in Sources */,

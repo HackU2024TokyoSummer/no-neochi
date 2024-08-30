@@ -13,6 +13,7 @@ class Formatter {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX") // 固定のロケール
         formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "M/d"
         let dateString = formatter.string(from: date)
         
         let weekdayIndex = calendar.component(.weekday, from: date)
@@ -24,8 +25,18 @@ class Formatter {
         
         timeFormatter.dateFormat = "HH:mm"
         let time = timeFormatter.string(from: date)
-        print("\(dateString) \(weekday)　\(time)")
+   
         return "\(dateString) \(weekday)　\(time)"
+    }
+    func formatHistoryDate(_ date: Date) -> String {
+        let calendar = Calendar.current
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX") // 固定のロケール
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "M/d"
+        let dateString = formatter.string(from: date)
+     
+        return "\(dateString) "
     }
     
     

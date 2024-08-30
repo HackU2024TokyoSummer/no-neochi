@@ -75,7 +75,7 @@ class CheckNeochi {
                 if sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue {
                     DispatchQueue.main.async {
                         var components = DateComponents()
-                        components.second = 5 // 5秒後に通知
+                        components.second = 600 // 5秒後に通知
                        
               
                  Alerm().sendNotification(DateComponents: components)
