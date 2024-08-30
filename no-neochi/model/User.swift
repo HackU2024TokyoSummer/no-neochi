@@ -15,10 +15,19 @@ struct User: Decodable {
     
 }
 extension User {
-    func toParameters() ->[String: Any]{
+    func toSignUpParameters() ->[String: Any]{
         return [
                     "user": [
                         "name": self.name,
+                        "email": self.email,
+                        "password": self.password
+                    ]
+                ]
+        
+    }
+    func toLoginParameters() ->[String: Any]{
+        return [
+                    "user": [
                         "email": self.email,
                         "password": self.password
                     ]

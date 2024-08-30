@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		720EF40A2C7AB3790065D375 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EF4092C7AB3790065D375 /* LoginView.swift */; };
 		7238BDA32C806AF0007F4A4A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDA22C806AF0007F4A4A /* Login.swift */; };
-		7238BDA52C806C18007F4A4A /* LoginTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDA42C806C18007F4A4A /* LoginTextView.swift */; };
+		7238BDA52C806C18007F4A4A /* SignUpTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDA42C806C18007F4A4A /* SignUpTextView.swift */; };
 		7238BDA82C808099007F4A4A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7238BDA72C808099007F4A4A /* Alamofire */; };
 		7238BDAB2C8080F5007F4A4A /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDAA2C8080F5007F4A4A /* SignUp.swift */; };
 		7238BDAD2C80C3D1007F4A4A /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDAC2C80C3D1007F4A4A /* NetworkConstants.swift */; };
 		7238BDB02C815637007F4A4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDAF2C815637007F4A4A /* User.swift */; };
+		7238BDB22C816D60007F4A4A /* LoginTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDB12C816D60007F4A4A /* LoginTextView.swift */; };
 		72873B122C7AF90B00BA75E8 /* CheckNeochi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72873B112C7AF90B00BA75E8 /* CheckNeochi.swift */; };
 		72873B162C7C064A00BA75E8 /* Alerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72873B152C7C064A00BA75E8 /* Alerm.swift */; };
 		72A8E9062C779A3C0058AA93 /* no_neochiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9052C779A3C0058AA93 /* no_neochiApp.swift */; };
@@ -49,10 +50,11 @@
 /* Begin PBXFileReference section */
 		720EF4092C7AB3790065D375 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7238BDA22C806AF0007F4A4A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		7238BDA42C806C18007F4A4A /* LoginTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextView.swift; sourceTree = "<group>"; };
+		7238BDA42C806C18007F4A4A /* SignUpTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextView.swift; sourceTree = "<group>"; };
 		7238BDAA2C8080F5007F4A4A /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		7238BDAC2C80C3D1007F4A4A /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		7238BDAF2C815637007F4A4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7238BDB12C816D60007F4A4A /* LoginTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextView.swift; sourceTree = "<group>"; };
 		72873B112C7AF90B00BA75E8 /* CheckNeochi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNeochi.swift; sourceTree = "<group>"; };
 		72873B132C7AFAE600BA75E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		72873B142C7AFD2E00BA75E8 /* no-neochi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "no-neochi.entitlements"; sourceTree = "<group>"; };
@@ -103,7 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				720EF4092C7AB3790065D375 /* LoginView.swift */,
-				7238BDA42C806C18007F4A4A /* LoginTextView.swift */,
+				7238BDA42C806C18007F4A4A /* SignUpTextView.swift */,
+				7238BDB12C816D60007F4A4A /* LoginTextView.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -371,10 +374,11 @@
 			files = (
 				7238BDAD2C80C3D1007F4A4A /* NetworkConstants.swift in Sources */,
 				7238BDB02C815637007F4A4A /* User.swift in Sources */,
-				7238BDA52C806C18007F4A4A /* LoginTextView.swift in Sources */,
+				7238BDA52C806C18007F4A4A /* SignUpTextView.swift in Sources */,
 				72873B122C7AF90B00BA75E8 /* CheckNeochi.swift in Sources */,
 				7238BDA32C806AF0007F4A4A /* Login.swift in Sources */,
 				72873B162C7C064A00BA75E8 /* Alerm.swift in Sources */,
+				7238BDB22C816D60007F4A4A /* LoginTextView.swift in Sources */,
 				72EB85D02C7A4C9D00C673E4 /* formatter.swift in Sources */,
 				720EF40A2C7AB3790065D375 /* LoginView.swift in Sources */,
 				72D776182C7A456F00CBA371 /* AddEventView.swift in Sources */,

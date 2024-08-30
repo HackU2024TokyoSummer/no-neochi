@@ -10,20 +10,14 @@ import Combine
 import Alamofire
 typealias ResultHandler<T> = (Result<T, APIError>) -> Void
 
-struct APIClient {
-    private let url = NetworkConstants.baseURL    
+struct SignUp {
+    private let url = NetworkConstants.baseURL
     
     func request(handler: @escaping ResultHandler<Data>, users: User) {
         let urlString = String(url+"users")
-        let url = URL(string: urlString)
-        guard let url = URL(string: urlString) else {
-            handler(.failure(.invalidURL))
-            return
-        }
-        let param: Parameters = users.toParameters()
-        let headers: HTTPHeaders = [
-            "Content-Type":"application/json"
-        ]
+  
+        let param: Parameters = users.toSignUpParameters()
+    
         AF.request(urlString, 
                    method: .post,
                    parameters: param,
@@ -34,7 +28,6 @@ struct APIClient {
                   print("Status Code: \(statusCode)")
               }
                        switch response.result {
-                           
                            case .success(let data):
                            handler(.success(data))
                            case .failure(let error):
