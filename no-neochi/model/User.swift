@@ -1,0 +1,28 @@
+//
+//  LoginModel.swift
+//  no-neochi
+//
+//  Created by saki on 2024/08/30.
+//
+
+import Foundation
+import Alamofire
+
+struct User: Decodable {
+    let name: String
+    let email: String
+    let password: String
+    
+}
+extension User {
+    func toParameters() ->[String: Any]{
+        return [
+                    "user": [
+                        "name": self.name,
+                        "email": self.email,
+                        "password": self.password
+                    ]
+                ]
+        
+    }
+}

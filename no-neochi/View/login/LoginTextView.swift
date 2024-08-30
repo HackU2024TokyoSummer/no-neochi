@@ -60,7 +60,17 @@ struct LoginTextView: View {
                 .padding(.bottom, 35)
             
 
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                let user: User = User(name: name, email: email, password: password)
+                APIClient().request(handler: {result in
+                    switch result {
+                    case .success(let user):
+                        print("成功！")
+                    case.failure(let error):
+                        print("失敗！",error)
+                    }
+                }, users: user)
+            }, label: {
                 Text("Sign Up").font(.custom("ABeeZee Regular", size: 14)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center)
                     .padding(.horizontal,78)
                     .padding(.vertical, 10)

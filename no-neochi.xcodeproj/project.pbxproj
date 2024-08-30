@@ -10,6 +10,10 @@
 		720EF40A2C7AB3790065D375 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EF4092C7AB3790065D375 /* LoginView.swift */; };
 		7238BDA32C806AF0007F4A4A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDA22C806AF0007F4A4A /* Login.swift */; };
 		7238BDA52C806C18007F4A4A /* LoginTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDA42C806C18007F4A4A /* LoginTextView.swift */; };
+		7238BDA82C808099007F4A4A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7238BDA72C808099007F4A4A /* Alamofire */; };
+		7238BDAB2C8080F5007F4A4A /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDAA2C8080F5007F4A4A /* SignUp.swift */; };
+		7238BDAD2C80C3D1007F4A4A /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDAC2C80C3D1007F4A4A /* NetworkConstants.swift */; };
+		7238BDB02C815637007F4A4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDAF2C815637007F4A4A /* User.swift */; };
 		72873B122C7AF90B00BA75E8 /* CheckNeochi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72873B112C7AF90B00BA75E8 /* CheckNeochi.swift */; };
 		72873B162C7C064A00BA75E8 /* Alerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72873B152C7C064A00BA75E8 /* Alerm.swift */; };
 		72A8E9062C779A3C0058AA93 /* no_neochiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9052C779A3C0058AA93 /* no_neochiApp.swift */; };
@@ -46,6 +50,9 @@
 		720EF4092C7AB3790065D375 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7238BDA22C806AF0007F4A4A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7238BDA42C806C18007F4A4A /* LoginTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextView.swift; sourceTree = "<group>"; };
+		7238BDAA2C8080F5007F4A4A /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		7238BDAC2C80C3D1007F4A4A /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		7238BDAF2C815637007F4A4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		72873B112C7AF90B00BA75E8 /* CheckNeochi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNeochi.swift; sourceTree = "<group>"; };
 		72873B132C7AFAE600BA75E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		72873B142C7AFD2E00BA75E8 /* no-neochi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "no-neochi.entitlements"; sourceTree = "<group>"; };
@@ -71,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7238BDA82C808099007F4A4A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,9 +121,25 @@
 		7238BDA12C806AC7007F4A4A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				7238BDAA2C8080F5007F4A4A /* SignUp.swift */,
 				7238BDA22C806AF0007F4A4A /* Login.swift */,
+				7238BDAC2C80C3D1007F4A4A /* NetworkConstants.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		7238BDA92C8080DE007F4A4A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		7238BDAE2C815622007F4A4A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		72A8E8F92C779A3C0058AA93 = {
@@ -141,6 +165,8 @@
 		72A8E9042C779A3C0058AA93 /* no-neochi */ = {
 			isa = PBXGroup;
 			children = (
+				7238BDAE2C815622007F4A4A /* New Group */,
+				7238BDA92C8080DE007F4A4A /* Protocol */,
 				7238BDA12C806AC7007F4A4A /* API */,
 				72873B142C7AFD2E00BA75E8 /* no-neochi.entitlements */,
 				72873B132C7AFAE600BA75E8 /* Info.plist */,
@@ -186,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				72A8E9322C79C4E30058AA93 /* Schedule.swift */,
+				7238BDAF2C815637007F4A4A /* User.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -222,6 +249,9 @@
 			dependencies = (
 			);
 			name = "no-neochi";
+			packageProductDependencies = (
+				7238BDA72C808099007F4A4A /* Alamofire */,
+			);
 			productName = "no-neochi";
 			productReference = 72A8E9022C779A3C0058AA93 /* no-neochi.app */;
 			productType = "com.apple.product-type.application";
@@ -294,6 +324,9 @@
 				Base,
 			);
 			mainGroup = 72A8E8F92C779A3C0058AA93;
+			packageReferences = (
+				7238BDA62C808099007F4A4A /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 72A8E9032C779A3C0058AA93 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -336,6 +369,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7238BDAD2C80C3D1007F4A4A /* NetworkConstants.swift in Sources */,
+				7238BDB02C815637007F4A4A /* User.swift in Sources */,
 				7238BDA52C806C18007F4A4A /* LoginTextView.swift in Sources */,
 				72873B122C7AF90B00BA75E8 /* CheckNeochi.swift in Sources */,
 				7238BDA32C806AF0007F4A4A /* Login.swift in Sources */,
@@ -345,6 +380,7 @@
 				72D776182C7A456F00CBA371 /* AddEventView.swift in Sources */,
 				72A8E9302C795B160058AA93 /* ButtomNavigationView.swift in Sources */,
 				72A8E9082C779A3C0058AA93 /* ScheduleListView.swift in Sources */,
+				7238BDAB2C8080F5007F4A4A /* SignUp.swift in Sources */,
 				72A8E9332C79C4E30058AA93 /* Schedule.swift in Sources */,
 				72A8E9062C779A3C0058AA93 /* no_neochiApp.swift in Sources */,
 			);
@@ -682,6 +718,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7238BDA62C808099007F4A4A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7238BDA72C808099007F4A4A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7238BDA62C808099007F4A4A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 72A8E8FA2C779A3C0058AA93 /* Project object */;
 }
