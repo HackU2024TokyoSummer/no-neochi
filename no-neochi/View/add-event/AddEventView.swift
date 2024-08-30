@@ -9,33 +9,17 @@ import SwiftUI
 
 struct AddEventView: View {
     @State var date = Date()
-    @State var time = Date()
-    @State var selectedMoney = "100"
+    @State var selectedMoney = 100
     @State var formatter = Formatter()
-    @State var moneys = ["100", "500", "1,000", "5000", "10,000"]
+    @State var moneys = [100, 500, 1,000, 5000, 10,000]
     @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("日付")
-                        .padding(.trailing, 25)
-                    DatePicker("日付を選択", selection: $date, displayedComponents: .date)
-                        .labelsHidden()
-                        .datePickerStyle(DefaultDatePickerStyle())
-
-                    Spacer()
-                }
-                .frame(width: 300)
-                .padding(.horizontal, 17)
-                .padding(.vertical, 10)
-                .border(Color.main)
-
-                .padding(.vertical, 10)
-                HStack {
                     Text("時間")
                         .padding(.trailing, 25)
-                    DatePicker("日付を選択", selection: $date, displayedComponents: .hourAndMinute)
+                    DatePicker("日付を選択", selection: $date)
                         .labelsHidden()
                         .datePickerStyle(DefaultDatePickerStyle())
                     Spacer()
@@ -69,7 +53,16 @@ struct AddEventView: View {
             .toolbar {
                 Button(
                     action: {
-                        //保存
+                        let schedule = Schedule(date: date, billing: selectedMoney)
+                        CreateScedule().request(handler: {result  in
+                            switch result {
+                            case .success(let data):
+                                print("成功！")
+                            
+                            case .failure(let error):
+                                print("失敗！",error)
+                            }
+                        }, schedule: schedule)
                         dismiss()
                     },
                     label: {
