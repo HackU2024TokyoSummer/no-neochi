@@ -12,6 +12,7 @@ struct SignTextView: View {
     @State var password = ""
     @State var conirmPassword = ""
     @State var name = ""
+    @State var isLogin = false
     var body: some View {
         VStack{
             Text("Email")
@@ -19,10 +20,16 @@ struct SignTextView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             
-            TextField("", text: $email)
-                .border(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)))
-                .font(.system(size: 30))
+            TextField("メールアドレスを入力", text: $email)
             
+                .font(.system(size: 12))
+                .padding(.vertical,10)
+                .padding(.horizontal, 10)
+                .overlay(
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .stroke(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)), lineWidth: 1)
+                )
             
                 .padding(.bottom, 35)
             Text("Password")
@@ -31,21 +38,31 @@ struct SignTextView: View {
             
             
             
-            TextField("", text: $password)
-                .border(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)))
-                .font(.system(size: 30))
-            
+            TextField("パスワードを入力", text: $password)
+                .font(.system(size: 12))
+                .padding(.vertical,10)
+                .padding(.horizontal, 10)
+                .overlay(
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .stroke(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)), lineWidth: 1)
+                )
             
                 .padding(.bottom, 35)
             //Password
             Text("Password(confirm)")
                 .font(.custom("ABeeZee Regular", size: 14))
                 .frame(maxWidth: .infinity, alignment: .leading)
-    
-            TextField("", text: $conirmPassword)
-                .border(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)))
-                .font(.system(size: 30))
             
+            TextField("もう一度パスワードを入力", text: $conirmPassword)
+                .font(.system(size: 12))
+                .padding(.vertical,10)
+                .padding(.horizontal, 10)
+                .overlay(
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .stroke(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)), lineWidth: 1)
+                )
             
                 .padding(.bottom, 35)
             
@@ -54,18 +71,26 @@ struct SignTextView: View {
                 .font(.custom("ABeeZee Regular", size: 14))
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            TextField("", text: $name)
-                .border(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)))
-                .font(.system(size: 30))
+            TextField("名前を入力", text: $name)
+                .font(.system(size: 12))
+                .padding(.vertical,10)
+                .padding(.horizontal, 10)
+                .overlay(
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .stroke(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)), lineWidth: 1)
+                )
                 .padding(.bottom, 35)
             
-
+            
             Button(action: {
                 let user: User = User(name: name, email: email, password: password)
                 SignUp().request(handler: {result in
                     switch result {
                     case .success(let user):
                         print("成功！",user)
+                        isLogin = true
+                        
                     case.failure(let error):
                         print("失敗！",error)
                     }
@@ -81,7 +106,9 @@ struct SignTextView: View {
             })
         }
         .padding(.horizontal,57)
-        
+        .fullScreenCover(isPresented: $isLogin, content: {
+            ButtomNavigationView()
+        })
         
     }
 }

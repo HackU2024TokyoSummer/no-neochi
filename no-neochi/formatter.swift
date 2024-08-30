@@ -18,8 +18,10 @@ class Formatter {
         let weekdayIndex = calendar.component(.weekday, from: date)
         let weekdaySymbols = ["Sun.", "Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat."]
         let weekday = weekdaySymbols[weekdayIndex - 1]
-
-        return "\(dateString) \(weekday)"
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        let time = timeFormatter.string(from: date)
+        return "\(dateString) \(weekday)　\(time)"
     }
 
     func formatTime(_ date: Date) -> String {

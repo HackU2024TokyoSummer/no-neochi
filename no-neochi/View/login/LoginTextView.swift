@@ -13,6 +13,7 @@ struct LoginTextView: View {
     @State var password = ""
     @State var conirmPassword = ""
     @State var name = ""
+    @State var isLogin = false
     var body: some View {
         VStack{
             Text("Email")
@@ -20,10 +21,15 @@ struct LoginTextView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             
-            TextField("", text: $email)
-                .border(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)))
-                .font(.system(size: 30))
-            
+            TextField("メールアドレスを入力", text: $email)
+                .font(.system(size: 12))
+                .padding(.vertical,10)
+                .padding(.horizontal, 10)
+                         .overlay(
+                            
+                             RoundedRectangle(cornerRadius: 3)
+                                .stroke(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)), lineWidth: 1)
+                         )
             
                 .padding(.bottom, 35)
             Text("Password")
@@ -32,9 +38,15 @@ struct LoginTextView: View {
             
             
             
-            TextField("", text: $password)
-                .border(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)))
-                .font(.system(size: 30))
+            TextField("パスワードを入力", text: $password)
+                .font(.system(size: 12))
+                .padding(.vertical,10)
+                .padding(.horizontal, 10)
+                         .overlay(
+                            
+                             RoundedRectangle(cornerRadius: 3)
+                                .stroke(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)), lineWidth: 1)
+                         )
             
             
                 .padding(.bottom, 35)
@@ -46,6 +58,7 @@ struct LoginTextView: View {
                     switch result {
                     case .success(let user):
                         print("成功！")
+                        isLogin = true
                     case.failure(let error):
                         print("失敗！",error)
                     }
@@ -63,6 +76,9 @@ struct LoginTextView: View {
             })
         }
         .padding(.horizontal,57)
+        .fullScreenCover(isPresented: $isLogin, content: {
+            ButtomNavigationView()
+        })
         
         
     }

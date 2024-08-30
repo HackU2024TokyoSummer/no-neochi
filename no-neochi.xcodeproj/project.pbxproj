@@ -21,31 +21,14 @@
 		72A8E9082C779A3C0058AA93 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9072C779A3C0058AA93 /* ScheduleListView.swift */; };
 		72A8E90A2C779A3D0058AA93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72A8E9092C779A3D0058AA93 /* Assets.xcassets */; };
 		72A8E90D2C779A3D0058AA93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72A8E90C2C779A3D0058AA93 /* Preview Assets.xcassets */; };
-		72A8E9172C779A3D0058AA93 /* no_neochiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9162C779A3D0058AA93 /* no_neochiTests.swift */; };
-		72A8E9212C779A3D0058AA93 /* no_neochiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9202C779A3D0058AA93 /* no_neochiUITests.swift */; };
-		72A8E9232C779A3D0058AA93 /* no_neochiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9222C779A3D0058AA93 /* no_neochiUITestsLaunchTests.swift */; };
 		72A8E9302C795B160058AA93 /* ButtomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E92F2C795B160058AA93 /* ButtomNavigationView.swift */; };
 		72A8E9332C79C4E30058AA93 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8E9322C79C4E30058AA93 /* Schedule.swift */; };
 		72D776182C7A456F00CBA371 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D776172C7A456F00CBA371 /* AddEventView.swift */; };
+		72E2D9242C81799A00D69270 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D9232C81799A00D69270 /* APIError.swift */; };
+		72E2D9262C81814D00D69270 /* CreateScedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D9252C81814D00D69270 /* CreateScedule.swift */; };
+		72E2D9282C818EFF00D69270 /* GetSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D9272C818EFF00D69270 /* GetSchedule.swift */; };
 		72EB85D02C7A4C9D00C673E4 /* formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB85CF2C7A4C9D00C673E4 /* formatter.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		72A8E9132C779A3D0058AA93 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 72A8E8FA2C779A3C0058AA93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 72A8E9012C779A3C0058AA93;
-			remoteInfo = "no-neochi";
-		};
-		72A8E91D2C779A3D0058AA93 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 72A8E8FA2C779A3C0058AA93 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 72A8E9012C779A3C0058AA93;
-			remoteInfo = "no-neochi";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		720EF4092C7AB3790065D375 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -64,14 +47,12 @@
 		72A8E9072C779A3C0058AA93 /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
 		72A8E9092C779A3D0058AA93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72A8E90C2C779A3D0058AA93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		72A8E9122C779A3D0058AA93 /* no-neochiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "no-neochiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		72A8E9162C779A3D0058AA93 /* no_neochiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = no_neochiTests.swift; sourceTree = "<group>"; };
-		72A8E91C2C779A3D0058AA93 /* no-neochiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "no-neochiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		72A8E9202C779A3D0058AA93 /* no_neochiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = no_neochiUITests.swift; sourceTree = "<group>"; };
-		72A8E9222C779A3D0058AA93 /* no_neochiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = no_neochiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		72A8E92F2C795B160058AA93 /* ButtomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtomNavigationView.swift; sourceTree = "<group>"; };
 		72A8E9322C79C4E30058AA93 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		72D776172C7A456F00CBA371 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		72E2D9232C81799A00D69270 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		72E2D9252C81814D00D69270 /* CreateScedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScedule.swift; sourceTree = "<group>"; };
+		72E2D9272C818EFF00D69270 /* GetSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSchedule.swift; sourceTree = "<group>"; };
 		72EB85CF2C7A4C9D00C673E4 /* formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,20 +62,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7238BDA82C808099007F4A4A /* Alamofire in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		72A8E90F2C779A3D0058AA93 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		72A8E9192C779A3D0058AA93 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +94,9 @@
 				7238BDAA2C8080F5007F4A4A /* SignUp.swift */,
 				7238BDA22C806AF0007F4A4A /* Login.swift */,
 				7238BDAC2C80C3D1007F4A4A /* NetworkConstants.swift */,
+				72E2D9232C81799A00D69270 /* APIError.swift */,
+				72E2D9252C81814D00D69270 /* CreateScedule.swift */,
+				72E2D9272C818EFF00D69270 /* GetSchedule.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -149,8 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				72A8E9042C779A3C0058AA93 /* no-neochi */,
-				72A8E9152C779A3D0058AA93 /* no-neochiTests */,
-				72A8E91F2C779A3D0058AA93 /* no-neochiUITests */,
 				72A8E9032C779A3C0058AA93 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -159,8 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				72A8E9022C779A3C0058AA93 /* no-neochi.app */,
-				72A8E9122C779A3D0058AA93 /* no-neochiTests.xctest */,
-				72A8E91C2C779A3D0058AA93 /* no-neochiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,23 +158,6 @@
 				72A8E90C2C779A3D0058AA93 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		72A8E9152C779A3D0058AA93 /* no-neochiTests */ = {
-			isa = PBXGroup;
-			children = (
-				72A8E9162C779A3D0058AA93 /* no_neochiTests.swift */,
-			);
-			path = "no-neochiTests";
-			sourceTree = "<group>";
-		};
-		72A8E91F2C779A3D0058AA93 /* no-neochiUITests */ = {
-			isa = PBXGroup;
-			children = (
-				72A8E9202C779A3D0058AA93 /* no_neochiUITests.swift */,
-				72A8E9222C779A3D0058AA93 /* no_neochiUITestsLaunchTests.swift */,
-			);
-			path = "no-neochiUITests";
 			sourceTree = "<group>";
 		};
 		72A8E9312C79C48D0058AA93 /* model */ = {
@@ -259,42 +208,6 @@
 			productReference = 72A8E9022C779A3C0058AA93 /* no-neochi.app */;
 			productType = "com.apple.product-type.application";
 		};
-		72A8E9112C779A3D0058AA93 /* no-neochiTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 72A8E9292C779A3D0058AA93 /* Build configuration list for PBXNativeTarget "no-neochiTests" */;
-			buildPhases = (
-				72A8E90E2C779A3D0058AA93 /* Sources */,
-				72A8E90F2C779A3D0058AA93 /* Frameworks */,
-				72A8E9102C779A3D0058AA93 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				72A8E9142C779A3D0058AA93 /* PBXTargetDependency */,
-			);
-			name = "no-neochiTests";
-			productName = "no-neochiTests";
-			productReference = 72A8E9122C779A3D0058AA93 /* no-neochiTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		72A8E91B2C779A3D0058AA93 /* no-neochiUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 72A8E92C2C779A3D0058AA93 /* Build configuration list for PBXNativeTarget "no-neochiUITests" */;
-			buildPhases = (
-				72A8E9182C779A3D0058AA93 /* Sources */,
-				72A8E9192C779A3D0058AA93 /* Frameworks */,
-				72A8E91A2C779A3D0058AA93 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				72A8E91E2C779A3D0058AA93 /* PBXTargetDependency */,
-			);
-			name = "no-neochiUITests";
-			productName = "no-neochiUITests";
-			productReference = 72A8E91C2C779A3D0058AA93 /* no-neochiUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -307,14 +220,6 @@
 				TargetAttributes = {
 					72A8E9012C779A3C0058AA93 = {
 						CreatedOnToolsVersion = 15.3;
-					};
-					72A8E9112C779A3D0058AA93 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 72A8E9012C779A3C0058AA93;
-					};
-					72A8E91B2C779A3D0058AA93 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 72A8E9012C779A3C0058AA93;
 					};
 				};
 			};
@@ -335,8 +240,6 @@
 			projectRoot = "";
 			targets = (
 				72A8E9012C779A3C0058AA93 /* no-neochi */,
-				72A8E9112C779A3D0058AA93 /* no-neochiTests */,
-				72A8E91B2C779A3D0058AA93 /* no-neochiUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -351,20 +254,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72A8E9102C779A3D0058AA93 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		72A8E91A2C779A3D0058AA93 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -376,8 +265,10 @@
 				7238BDB02C815637007F4A4A /* User.swift in Sources */,
 				7238BDA52C806C18007F4A4A /* SignUpTextView.swift in Sources */,
 				72873B122C7AF90B00BA75E8 /* CheckNeochi.swift in Sources */,
+				72E2D9262C81814D00D69270 /* CreateScedule.swift in Sources */,
 				7238BDA32C806AF0007F4A4A /* Login.swift in Sources */,
 				72873B162C7C064A00BA75E8 /* Alerm.swift in Sources */,
+				72E2D9282C818EFF00D69270 /* GetSchedule.swift in Sources */,
 				7238BDB22C816D60007F4A4A /* LoginTextView.swift in Sources */,
 				72EB85D02C7A4C9D00C673E4 /* formatter.swift in Sources */,
 				720EF40A2C7AB3790065D375 /* LoginView.swift in Sources */,
@@ -385,42 +276,13 @@
 				72A8E9302C795B160058AA93 /* ButtomNavigationView.swift in Sources */,
 				72A8E9082C779A3C0058AA93 /* ScheduleListView.swift in Sources */,
 				7238BDAB2C8080F5007F4A4A /* SignUp.swift in Sources */,
+				72E2D9242C81799A00D69270 /* APIError.swift in Sources */,
 				72A8E9332C79C4E30058AA93 /* Schedule.swift in Sources */,
 				72A8E9062C779A3C0058AA93 /* no_neochiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		72A8E90E2C779A3D0058AA93 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				72A8E9172C779A3D0058AA93 /* no_neochiTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		72A8E9182C779A3D0058AA93 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				72A8E9212C779A3D0058AA93 /* no_neochiUITests.swift in Sources */,
-				72A8E9232C779A3D0058AA93 /* no_neochiUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		72A8E9142C779A3D0058AA93 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 72A8E9012C779A3C0058AA93 /* no-neochi */;
-			targetProxy = 72A8E9132C779A3D0058AA93 /* PBXContainerItemProxy */;
-		};
-		72A8E91E2C779A3D0058AA93 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 72A8E9012C779A3C0058AA93 /* no-neochi */;
-			targetProxy = 72A8E91D2C779A3D0058AA93 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		72A8E9242C779A3D0058AA93 /* Debug */ = {
@@ -610,78 +472,6 @@
 			};
 			name = Release;
 		};
-		72A8E92A2C779A3D0058AA93 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hosonuma.sakki.no-neochiTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/no-neochi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/no-neochi";
-			};
-			name = Debug;
-		};
-		72A8E92B2C779A3D0058AA93 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hosonuma.sakki.no-neochiTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/no-neochi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/no-neochi";
-			};
-			name = Release;
-		};
-		72A8E92D2C779A3D0058AA93 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hosonuma.sakki.no-neochiUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "no-neochi";
-			};
-			name = Debug;
-		};
-		72A8E92E2C779A3D0058AA93 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hosonuma.sakki.no-neochiUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "no-neochi";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -699,24 +489,6 @@
 			buildConfigurations = (
 				72A8E9272C779A3D0058AA93 /* Debug */,
 				72A8E9282C779A3D0058AA93 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		72A8E9292C779A3D0058AA93 /* Build configuration list for PBXNativeTarget "no-neochiTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				72A8E92A2C779A3D0058AA93 /* Debug */,
-				72A8E92B2C779A3D0058AA93 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		72A8E92C2C779A3D0058AA93 /* Build configuration list for PBXNativeTarget "no-neochiUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				72A8E92D2C779A3D0058AA93 /* Debug */,
-				72A8E92E2C779A3D0058AA93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

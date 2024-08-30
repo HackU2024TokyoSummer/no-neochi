@@ -11,12 +11,12 @@ import HealthKit
 struct ScheduleListView: View {
     let sampleSchedules = [
         
-        Schedule(date: Date(), time: Date(), billing: 1000),
+        Schedule(date: Date(), billing: 1000),
         Schedule(
-            date: Date().addingTimeInterval(86400), time: Date().addingTimeInterval(3600),
+            date: Date().addingTimeInterval(86400),
             billing: 1500),
         Schedule(
-            date: Date().addingTimeInterval(172800), time: Date().addingTimeInterval(7200),
+            date: Date().addingTimeInterval(172800),
             billing: 2000),
         
     ]
@@ -28,6 +28,7 @@ struct ScheduleListView: View {
                 List(sampleSchedules) { schedule in
                     ScheduleRow(schedule: schedule)
                         .listRowSeparator(.hidden)
+                      
                     
                 }
                 .padding(.horizontal, 28)
@@ -79,6 +80,13 @@ struct ScheduleListView: View {
             .onAppear(){
                 CheckNeochi().checkPermistion()
                 CheckNeochi().setObserver()
+                GetScedule().request(handler: {result in
+                    switch result{
+                    case .success(let data):
+                        print("成功！")
+                    case.failure(let error):
+                        print("失敗！",error)
+                    }})
                
             }
         }
@@ -99,12 +107,13 @@ struct ScheduleRow: View {
                 .font(.system(size: 16))
                 .padding(.vertical, 6)
             HStack {
-                Text(formatter.formatTime(schedule.time))
+              
                 
                 Text("¥\(schedule.billing)")
                     .padding(.leading, 116)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.vertical, 20)
         .padding(.horizontal, 30)
         .overlay(
