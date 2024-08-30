@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Schedule: Identifiable, Decodable {
+struct Schedule: Identifiable, Decodable, Equatable {
     var id = Int()
     var wake_time : Date
     var billing : Int

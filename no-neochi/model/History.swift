@@ -7,7 +7,7 @@
 
 import Foundation
 struct History: Identifiable, Decodable{
-    var id = UUID()
+    var id = Int()
     var wake_time: Date
     var billing: Int
 }

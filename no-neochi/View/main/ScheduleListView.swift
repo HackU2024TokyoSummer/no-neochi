@@ -11,7 +11,7 @@ import HealthKit
 struct ScheduleListView: View {
   
     @State var isAddEvent = false
-    @State var isShowAlert = false
+ 
     @State var schedules = [Schedule]()
     var body: some View {
         NavigationStack {
@@ -25,6 +25,9 @@ struct ScheduleListView: View {
                 .padding(.horizontal, 28)
                 .padding(.top, 20)
                 .listStyle(PlainListStyle())
+                .refreshable {
+                    getAllScedule()
+                }
                 .toolbar {
                     ToolbarItem {
                         Button(
@@ -69,22 +72,20 @@ struct ScheduleListView: View {
                     .presentationDetents([.medium])
             }
             .onAppear(){
+                getAllScedule()
+                if(schedules != []){
+                    
+               
                 CheckNeochi().checkPermistion()
                 if let rootVC = UIApplication.shared.windows.first?.rootViewController {
                     CheckNeochi().setObserver(in: rootVC)
-                    CheckNeochi().insertSampleData(in: rootVC)
+                 //   CheckNeochi().insertSampleData(in: rootVC)
+                }
+                
                 }
              
-         
-                getAllScedule()
             }
-            .alert("ねました！", isPresented: $isShowAlert) {
-           
-                
-            } message: {
-           
-                Text("あなたは課金されます")
-            }
+            
         }
     }
     func getAllScedule(){

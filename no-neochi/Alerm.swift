@@ -28,7 +28,18 @@ class Alerm{
     func showAlert(in viewController: UIViewController) {
         let alert = UIAlertController(title: "アラート", message: "あなたは寝ています！", preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default){ _ in
+            
+            PutNeochi().request(handler: { result in
+                switch result {
+                case .success(()):
+                    print("寝落ち処理完了")
+                case .failure(let error):
+                    print("寝落ち処理失敗！")
+                }
+                
+            })
+        }
         alert.addAction(okAction)
         
         viewController.present(alert, animated: true, completion: nil)

@@ -40,8 +40,7 @@ struct GetScedule {
                              let dateFormatter = DateFormatter()
                              // ISO8601形式を指定
                              dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-                             dateFormatter.locale = Locale(identifier: "ja_JP")
-                             dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+                       
                              decoder.dateDecodingStrategy = .formatted(dateFormatter)
                              // ここで `Schedule` 型にデコード
                              let schedules = try decoder.decode([Schedule].self, from: data)

@@ -19,24 +19,24 @@ struct AddEventView: View {
                 HStack {
                     Text("時間")
                         .padding(.trailing, 25)
-                    DatePicker("日付を選択", selection: $date)
+                    DatePicker("日付を選択", selection: $date,  in: Date()...)
                         .labelsHidden()
                         .datePickerStyle(DefaultDatePickerStyle())
                     Spacer()
-
+                    
                 }
                 .frame(width: 300)
                 .padding(.horizontal, 17)
                 .padding(.vertical, 10)
                 .border(Color.main)
-
+                
                 HStack {
                     Text("大事度")
-
+                    
                     Slider(value: $moneys,
-                                     in: 0...100)
+                           in: 0...100)
                     .tint(Color.main)
-
+                    
                     
                     Spacer()
                 }
@@ -45,9 +45,9 @@ struct AddEventView: View {
                 .padding(.vertical, 10)
                 .border(Color.main)
                 .padding(.vertical, 10)
-
+                
             }
-
+            
             .navigationTitle("予定追加")
             .toolbar {
                 Button(
@@ -59,7 +59,7 @@ struct AddEventView: View {
                             switch result {
                             case .success(let data):
                                 print("成功！")
-                            
+                                
                             case .failure(let error):
                                 print("失敗！",error)
                             }
@@ -70,10 +70,10 @@ struct AddEventView: View {
                         Text("登録")
                     })
             }
-
+            
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-
+                    
                     Button(
                         action: {
                             dismiss()

@@ -10,12 +10,12 @@ import SwiftUI
 struct HistoryView: View {
     @State var totalBilling = 0
     @State var histories = [History]()
- 
+    
     var body: some View {
         NavigationStack{
             VStack{
                 HStack{
-                    Text("今までの過金額")
+                    Text("今までの課金額")
                         .padding(.trailing,50)
                     Text("\(totalBilling)円")
                     
@@ -34,7 +34,7 @@ struct HistoryView: View {
                     VStack{
                         HStack{
                             Text(Formatter().formatHistoryDate(history.wake_time))
-                               Spacer()
+                            Spacer()
                             Text("\(history.billing)円")
                             
                             
@@ -58,9 +58,10 @@ struct HistoryView: View {
                     switch result {
                     case .success(let data):
                         print("履歴取得できたよ")
-
-                      histories = data.history
+                        
+                        histories = data.history
                         totalBilling = data.total_money
+                        print(histories)
                     case .failure(let error):
                         print("履歴取得失敗", error)
                     }
