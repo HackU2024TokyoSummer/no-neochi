@@ -11,17 +11,17 @@ import HealthKit
 struct ScheduleListView: View {
     let sampleSchedules = [
         
-        Schedule(date: Date(), billing: 1000),
-        Schedule(
-            date: Date().addingTimeInterval(86400),
-            billing: 1500),
-        Schedule(
-            date: Date().addingTimeInterval(172800),
-            billing: 2000),
+        Schedule(id: 0, date: Date(), billing: 1000),
+        Schedule(id: 1,
+                 date: Date().addingTimeInterval(86400),
+                 billing: 1500),
+        Schedule(id: 2,
+                 date: Date().addingTimeInterval(172800),
+                 billing: 2000),
         
     ]
     @State var isAddEvent = false
-   @State var isShowAlert = false
+    @State var isShowAlert = false
     
     var body: some View {
         NavigationStack {
@@ -29,7 +29,7 @@ struct ScheduleListView: View {
                 List(sampleSchedules) { schedule in
                     ScheduleRow(schedule: schedule)
                         .listRowSeparator(.hidden)
-                      
+                    
                     
                 }
                 .padding(.horizontal, 28)
@@ -88,15 +88,15 @@ struct ScheduleListView: View {
                     case.failure(let error):
                         print("失敗！",error)
                     }})
-               
+                
             }
             .alert("ねました！", isPresented: $isShowAlert) {
-                      //ここで課金
-
-                   } message: {
-                       // アラートのメッセージ...
-                       Text("あなたは課金されます")
-                   }
+                //ここで課金
+                
+            } message: {
+                // アラートのメッセージ...
+                Text("あなたは課金されます")
+            }
         }
     }
 }
@@ -115,7 +115,7 @@ struct ScheduleRow: View {
                 .font(.system(size: 16))
                 .padding(.vertical, 6)
             HStack {
-              
+                
                 
                 Text("¥\(schedule.billing)")
                     .padding(.leading, 116)
@@ -128,7 +128,7 @@ struct ScheduleRow: View {
             RoundedRectangle(cornerRadius: 16)
                 .stroke(Color.main, lineWidth: 1)
         )
-      
+        
         
     }
     

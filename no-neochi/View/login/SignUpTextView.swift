@@ -110,7 +110,8 @@ struct SignTextView: View {
             
             
             Button(action: {
-                
+                UserDefaults.standard.set(["email": email], forKey: "email")
+                UserDefaults.standard.set(selectedMoney, forKey: "maxBilling")
                 let user: User = User(name: name, email: email, password: password)
                 SignUp().request(handler: {result in
                     switch result {

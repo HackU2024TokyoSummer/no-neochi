@@ -94,9 +94,9 @@
 				7238BDAA2C8080F5007F4A4A /* SignUp.swift */,
 				7238BDA22C806AF0007F4A4A /* Login.swift */,
 				7238BDAC2C80C3D1007F4A4A /* NetworkConstants.swift */,
-				72E2D9232C81799A00D69270 /* APIError.swift */,
 				72E2D9252C81814D00D69270 /* CreateScedule.swift */,
 				72E2D9272C818EFF00D69270 /* GetSchedule.swift */,
+				72E2D9232C81799A00D69270 /* APIError.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";

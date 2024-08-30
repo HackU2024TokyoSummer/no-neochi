@@ -53,6 +53,7 @@ struct LoginTextView: View {
          
 
             Button(action: {
+                UserDefaults.standard.set(["email": email], forKey: "email")
                 let user: User = User(name: name, email: email, password: password)
                Login().request(handler: {result in
                     switch result {

@@ -11,7 +11,7 @@ struct AddEventView: View {
     @State var date = Date()
     @State var selectedMoney = 100
     @State var formatter = Formatter()
-    @State var moneys = [100, 500, 1,000, 5000, 10,000]
+    @State var moneys = 50.0
     @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationStack {
@@ -31,14 +31,13 @@ struct AddEventView: View {
                 .border(Color.main)
 
                 HStack {
-                    Text("課金額")
+                    Text("大事度")
 
-                    Picker("", selection: $selectedMoney) {
-                        ForEach(moneys, id: \.self) { money in
-                            Text("\(money)円")
-                        }
+                    Slider(value: $moneys,
+                                     in: 0...100)
+                    .tint(Color.main)
 
-                    }
+                    
                     Spacer()
                 }
                 .frame(width: 300)
@@ -53,7 +52,9 @@ struct AddEventView: View {
             .toolbar {
                 Button(
                     action: {
-                        let schedule = Schedule(date: date, billing: selectedMoney)
+                        let maxBilling =   UserDefaults.standard.value(forKey: "maxBilling")
+                        let billing: Double = maxBilling as! Double * (moneys/100)
+                        let schedule = Schedule(date: date, billing: Int(billing))
                         CreateScedule().request(handler: {result  in
                             switch result {
                             case .success(let data):

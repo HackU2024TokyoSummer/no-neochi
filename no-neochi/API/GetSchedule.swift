@@ -11,13 +11,19 @@ import Alamofire
 struct GetScedule {
     private let url = NetworkConstants.baseURL
     
+    
     func request(handler: @escaping ResultHandler<Schedule>) {
         let urlString = String(url+"wakes/create")
-  
+        let email =   UserDefaults.standard.value(forKey: "email")
+      
+        let param: Parameters = email as! Parameters
+        
         
           AF.request(urlString,
                      method: .get,
-                     encoding: URLEncoding.queryString)
+                     parameters: param,
+                     encoding: URLEncoding.queryString
+                    )
           .responseData { response in
                      debugPrint(response)
                      
