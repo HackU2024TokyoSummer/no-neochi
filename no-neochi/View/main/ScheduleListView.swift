@@ -11,6 +11,7 @@ import HealthKit
 struct ScheduleListView: View {
   
     @State var isAddEvent = false
+    @State var isCredit = false
  
     @State var schedules = [Schedule]()
     var body: some View {
@@ -32,7 +33,7 @@ struct ScheduleListView: View {
                     ToolbarItem {
                         Button(
                             action: {
-                                
+                               isCredit = true
                             },
                             label: {
                                 Image(systemName: "person.circle")
@@ -71,8 +72,12 @@ struct ScheduleListView: View {
                 AddEventView()
                     .presentationDetents([.medium])
             }
+            .fullScreenCover(isPresented: $isCredit) {
+               ContentView()
+            }
             .onAppear(){
                 getAllScedule()
+                
                 if(schedules != []){
                     
                

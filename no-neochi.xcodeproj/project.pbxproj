@@ -31,6 +31,11 @@
 		72E2D92D2C81F22600D69270 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D92C2C81F22600D69270 /* History.swift */; };
 		72E2D92F2C81FDED00D69270 /* GetHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D92E2C81FDED00D69270 /* GetHistory.swift */; };
 		72E2D9312C82083300D69270 /* PutNeochi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D9302C82083300D69270 /* PutNeochi.swift */; };
+		72E2D9342C8216F500D69270 /* PostCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D9332C8216F500D69270 /* PostCustomer.swift */; };
+		72E2D9362C821E1800D69270 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D9352C821E1800D69270 /* CreditView.swift */; };
+		72E2D9382C821E5B00D69270 /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D9372C821E5B00D69270 /* Credit.swift */; };
+		72E2D93B2C82206C00D69270 /* FincodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D93A2C82206C00D69270 /* FincodeService.swift */; };
+		72E2D93D2C82209A00D69270 /* cradit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E2D93C2C82209A00D69270 /* cradit.swift */; };
 		72EB85D02C7A4C9D00C673E4 /* formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB85CF2C7A4C9D00C673E4 /* formatter.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +66,11 @@
 		72E2D92C2C81F22600D69270 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		72E2D92E2C81FDED00D69270 /* GetHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHistory.swift; sourceTree = "<group>"; };
 		72E2D9302C82083300D69270 /* PutNeochi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutNeochi.swift; sourceTree = "<group>"; };
+		72E2D9332C8216F500D69270 /* PostCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCustomer.swift; sourceTree = "<group>"; };
+		72E2D9352C821E1800D69270 /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
+		72E2D9372C821E5B00D69270 /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
+		72E2D93A2C82206C00D69270 /* FincodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FincodeService.swift; sourceTree = "<group>"; };
+		72E2D93C2C82209A00D69270 /* cradit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cradit.swift; sourceTree = "<group>"; };
 		72EB85CF2C7A4C9D00C673E4 /* formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +119,7 @@
 				72E2D9232C81799A00D69270 /* APIError.swift */,
 				72E2D92E2C81FDED00D69270 /* GetHistory.swift */,
 				72E2D9302C82083300D69270 /* PutNeochi.swift */,
+				72E2D9332C8216F500D69270 /* PostCustomer.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -146,6 +157,7 @@
 		72A8E9042C779A3C0058AA93 /* no-neochi */ = {
 			isa = PBXGroup;
 			children = (
+				72E2D9392C82202300D69270 /* kakin */,
 				7238BDAE2C815622007F4A4A /* New Group */,
 				7238BDA92C8080DE007F4A4A /* Protocol */,
 				7238BDA12C806AC7007F4A4A /* API */,
@@ -178,6 +190,7 @@
 				72A8E9322C79C4E30058AA93 /* Schedule.swift */,
 				7238BDAF2C815637007F4A4A /* User.swift */,
 				72E2D92C2C81F22600D69270 /* History.swift */,
+				72E2D9372C821E5B00D69270 /* Credit.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -209,8 +222,18 @@
 		72E2D9322C8214A200D69270 /* Credit */ = {
 			isa = PBXGroup;
 			children = (
+				72E2D9352C821E1800D69270 /* CreditView.swift */,
 			);
 			path = Credit;
+			sourceTree = "<group>";
+		};
+		72E2D9392C82202300D69270 /* kakin */ = {
+			isa = PBXGroup;
+			children = (
+				72E2D93A2C82206C00D69270 /* FincodeService.swift */,
+				72E2D93C2C82209A00D69270 /* cradit.swift */,
+			);
+			path = kakin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,8 +313,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7238BDAD2C80C3D1007F4A4A /* NetworkConstants.swift in Sources */,
+				72E2D9362C821E1800D69270 /* CreditView.swift in Sources */,
 				72E2D92F2C81FDED00D69270 /* GetHistory.swift in Sources */,
+				72E2D93D2C82209A00D69270 /* cradit.swift in Sources */,
 				7238BDB02C815637007F4A4A /* User.swift in Sources */,
+				72E2D9342C8216F500D69270 /* PostCustomer.swift in Sources */,
 				7238BDA52C806C18007F4A4A /* SignUpTextView.swift in Sources */,
 				72873B122C7AF90B00BA75E8 /* CheckNeochi.swift in Sources */,
 				72E2D9262C81814D00D69270 /* CreateScedule.swift in Sources */,
@@ -301,6 +327,7 @@
 				7238BDB22C816D60007F4A4A /* LoginTextView.swift in Sources */,
 				72EB85D02C7A4C9D00C673E4 /* formatter.swift in Sources */,
 				720EF40A2C7AB3790065D375 /* LoginView.swift in Sources */,
+				72E2D93B2C82206C00D69270 /* FincodeService.swift in Sources */,
 				72D776182C7A456F00CBA371 /* AddEventView.swift in Sources */,
 				72E2D92B2C81EEC400D69270 /* HistoryView.swift in Sources */,
 				72A8E9302C795B160058AA93 /* ButtomNavigationView.swift in Sources */,
@@ -311,6 +338,7 @@
 				72E2D9312C82083300D69270 /* PutNeochi.swift in Sources */,
 				72A8E9332C79C4E30058AA93 /* Schedule.swift in Sources */,
 				72A8E9062C779A3C0058AA93 /* no_neochiApp.swift in Sources */,
+				72E2D9382C821E5B00D69270 /* Credit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

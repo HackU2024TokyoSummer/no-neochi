@@ -12,10 +12,10 @@ import Alamofire
 struct Login {
     private let url = NetworkConstants.baseURL
     
-    func request(handler: @escaping ResultHandler<Data>, users: User) {
+    func request(handler: @escaping ResultHandler<Data>, user: User) {
         let urlString = String(url+"login")
      
-        let param: Parameters = users.toLoginParameters()
+        let param: Parameters = user.toLoginParameters()
      
         AF.request(urlString,
                    method: .post,

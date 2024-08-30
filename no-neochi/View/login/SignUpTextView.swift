@@ -115,16 +115,26 @@ struct SignTextView: View {
                 let user: User = User(name: name, email: email, password: password)
                 SignUp().request(handler: {result in
                     switch result {
-                    case .success(let user):
-                        print("成功！",user)
-                        isLogin = true
+                    case .success(let data):
+                        print("成功！",data)
+                        PostCustomer().request(handler: {result in
+                            switch result{
+                            case .success():
+                                print("customer成功！")
+                                isLogin = true
+                            case .failure(let error):
+                                print("customerエラー！",error)
+                            }}, user: user)
+                        
+                     
                         
                     case.failure(let error):
                         print("失敗！",error)
                     }
-                }, users: user)
+                }, user: user)
             }, label: {
-                Text("Sign Up").font(.custom("ABeeZee Regular", size: 14)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center)
+                Text("Sign Up")
+                    .font(.custom("ABeeZee Regular", size: 14)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center)
                     .padding(.horizontal,78)
                     .padding(.vertical, 10)
                     .background(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)))

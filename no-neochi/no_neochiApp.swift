@@ -34,9 +34,9 @@ struct no_neochiApp: App {
 
         WindowGroup {
             
-//LoginView()
+LoginView()
 
-        ButtomNavigationView()
+       // ButtomNavigationView()
         }
     }
 }

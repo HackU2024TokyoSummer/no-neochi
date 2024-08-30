@@ -64,7 +64,7 @@ struct LoginTextView: View {
                     case.failure(let error):
                         print("失敗！",error)
                     }
-                }, users: user)
+                }, user: user)
             }, label: {
                 Text("Login")
                     .font(.custom("ABeeZee Regular", size: 14))

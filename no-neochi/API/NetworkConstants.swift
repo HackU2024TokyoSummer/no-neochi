@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+typealias ResultHandler<T> = (Result<T, APIError>) -> Void
 class NetworkConstants: NSObject {
 
   // MARK: - Variables
