@@ -61,7 +61,6 @@ struct HistoryView: View {
                         
                         histories = data.history
                         totalBilling = data.total_money
-                        print(histories)
                     case .failure(let error):
                         print("履歴取得失敗", error)
                     }

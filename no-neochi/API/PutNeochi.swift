@@ -29,8 +29,7 @@ struct PutNeochi {
                    switch response.result {
                    case .success(let data):
                        do {
-            
-                     
+
                            handler(.success(()))
                        } catch {
                            // デコードに失敗した場合

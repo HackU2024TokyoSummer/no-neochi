@@ -96,6 +96,7 @@ struct SignTextView: View {
                 }
 
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             .onAppear(){
                 print(moneys)
             }
