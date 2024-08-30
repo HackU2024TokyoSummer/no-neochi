@@ -21,6 +21,7 @@ struct ScheduleListView: View {
         
     ]
     @State var isAddEvent = false
+   @State var isShowAlert = false
     
     var body: some View {
         NavigationStack {
@@ -89,6 +90,13 @@ struct ScheduleListView: View {
                     }})
                
             }
+            .alert("ねました！", isPresented: $isShowAlert) {
+                      //ここで課金
+
+                   } message: {
+                       // アラートのメッセージ...
+                       Text("あなたは課金されます")
+                   }
         }
     }
 }
@@ -120,6 +128,7 @@ struct ScheduleRow: View {
             RoundedRectangle(cornerRadius: 16)
                 .stroke(Color.main, lineWidth: 1)
         )
+      
         
     }
     

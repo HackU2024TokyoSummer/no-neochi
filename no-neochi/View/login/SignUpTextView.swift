@@ -13,6 +13,10 @@ struct SignTextView: View {
     @State var conirmPassword = ""
     @State var name = ""
     @State var isLogin = false
+    @State var isShowAlert = false
+    @State var selectedMoney = 100
+    @State var moneys = [100, 500, 1000, 5000, 10000]
+    
     var body: some View {
         VStack{
             Text("Email")
@@ -81,9 +85,32 @@ struct SignTextView: View {
                         .stroke(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)), lineWidth: 1)
                 )
                 .padding(.bottom, 35)
+            Text("最大課金額")
+                .font(.custom("ABeeZee Regular", size: 14))
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Picker("", selection: $selectedMoney) {
+                ForEach(moneys, id: \.self) { money in
+                   
+                    Text("\(money)円")
+                }
+
+            }
+            .onAppear(){
+                print(moneys)
+            }
+                .padding(.vertical,10)
+                .padding(.horizontal, 10)
+                .overlay(
+                    
+                    RoundedRectangle(cornerRadius: 3)
+                        .stroke(Color(#colorLiteral(red: 0.886274516582489, green: 0.7764706015586853, blue: 1, alpha: 1)), lineWidth: 1)
+                )
+                .padding(.bottom, 35)
             
             
             Button(action: {
+                
                 let user: User = User(name: name, email: email, password: password)
                 SignUp().request(handler: {result in
                     switch result {
@@ -109,7 +136,7 @@ struct SignTextView: View {
         .fullScreenCover(isPresented: $isLogin, content: {
             ButtomNavigationView()
         })
-        
+       
     }
 }
 
