@@ -81,6 +81,7 @@
 		720EF4082C7AB3310065D375 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				72E2D9292C81EE9600D69270 /* history */,
 				72D776192C7A457A00CBA371 /* main */,
 				72D776162C7A454D00CBA371 /* add-event */,
 				720EF4072C7AB3290065D375 /* login */,
@@ -183,6 +184,13 @@
 				72A8E9072C779A3C0058AA93 /* ScheduleListView.swift */,
 			);
 			path = main;
+			sourceTree = "<group>";
+		};
+		72E2D9292C81EE9600D69270 /* history */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = history;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

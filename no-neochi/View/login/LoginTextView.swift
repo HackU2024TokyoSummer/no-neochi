@@ -54,6 +54,7 @@ struct LoginTextView: View {
 
             Button(action: {
                 UserDefaults.standard.set(["email": email], forKey: "email")
+                UserDefaults.standard.set(10000, forKey: "maxBilling")
                 let user: User = User(name: name, email: email, password: password)
                Login().request(handler: {result in
                     switch result {

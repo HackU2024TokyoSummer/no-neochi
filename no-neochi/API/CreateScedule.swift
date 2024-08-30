@@ -14,20 +14,20 @@ struct CreateScedule {
     
     func request(handler: @escaping ResultHandler<Data>, schedule: Schedule) {
         let urlString = String(url+"wakes/create")
-        let email =   UserDefaults.standard.value(forKey: "email")
-      
-        let emailParam: Parameters = email as! Parameters
+        let email =   UserDefaults.standard.value(forKey: "email")as? [String: String]
+      print(email)
+        let emailParam: Parameters = email!
         
         let scheduleParam: Parameters = schedule.toCreateScheduleParameters()
-        let params: Parameters = emailParam.merging(scheduleParam) { (_, new) in new }
+      
+        let params: Parameters = scheduleParam.merging(emailParam) { (_, new) in new }
      
-        
+        print(params)
           AF.request(urlString,
                      method: .post,
                      parameters: params,
                      encoding: URLEncoding.queryString)
         .responseData { response in
-            debugPrint(response) 
             if let statusCode = response.response?.statusCode {
                   print("Status Code: \(statusCode)")
               }

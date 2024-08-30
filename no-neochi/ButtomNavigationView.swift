@@ -19,9 +19,7 @@ struct ButtomNavigationView: View {
                     Image("time")
                 }
         }
-        .onAppear(){
-            CheckNeochi().setObserver()
-        }
+       
     }
         
 }

@@ -53,8 +53,8 @@ struct AddEventView: View {
                 Button(
                     action: {
                         let maxBilling =   UserDefaults.standard.value(forKey: "maxBilling")
-                        let billing: Double = maxBilling as! Double * (moneys/100)
-                        let schedule = Schedule(date: date, billing: Int(billing))
+                        let billing = maxBilling as! Double * (moneys/100)
+                        let schedule = Schedule(wake_time: date, billing: Int(billing))
                         CreateScedule().request(handler: {result  in
                             switch result {
                             case .success(let data):

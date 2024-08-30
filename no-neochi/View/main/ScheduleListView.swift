@@ -9,24 +9,14 @@ import SwiftUI
 import HealthKit
 
 struct ScheduleListView: View {
-    let sampleSchedules = [
-        
-        Schedule(id: 0, date: Date(), billing: 1000),
-        Schedule(id: 1,
-                 date: Date().addingTimeInterval(86400),
-                 billing: 1500),
-        Schedule(id: 2,
-                 date: Date().addingTimeInterval(172800),
-                 billing: 2000),
-        
-    ]
+  
     @State var isAddEvent = false
     @State var isShowAlert = false
-    
+    @State var schedules = [Schedule]()
     var body: some View {
         NavigationStack {
             ZStack {
-                List(sampleSchedules) { schedule in
+                List(schedules) { schedule in
                     ScheduleRow(schedule: schedule)
                         .listRowSeparator(.hidden)
                     
@@ -74,30 +64,39 @@ struct ScheduleListView: View {
                 )
                 .padding(.trailing, 30)
             }
-            .sheet(isPresented: $isAddEvent) {
+            .sheet(isPresented: $isAddEvent, onDismiss:{getAllScedule()}) {
                 AddEventView()
                     .presentationDetents([.medium])
             }
             .onAppear(){
                 CheckNeochi().checkPermistion()
-                CheckNeochi().setObserver()
-                GetScedule().request(handler: {result in
-                    switch result{
-                    case .success(let data):
-                        print("成功！")
-                    case.failure(let error):
-                        print("失敗！",error)
-                    }})
-                
+                if let rootVC = UIApplication.shared.windows.first?.rootViewController {
+                    CheckNeochi().setObserver(in: rootVC)
+                    CheckNeochi().insertSampleData(in: rootVC)
+                }
+             
+         
+                getAllScedule()
             }
             .alert("ねました！", isPresented: $isShowAlert) {
-                //ここで課金
+           
                 
             } message: {
-                // アラートのメッセージ...
+           
                 Text("あなたは課金されます")
             }
         }
+    }
+    func getAllScedule(){
+        GetScedule().request(handler: {result in
+            switch result{
+            case .success(let data):
+                schedules = data
+                print(data)
+                print("成功！")
+            case.failure(let error):
+                print("失敗！,",error)
+            }})
     }
 }
 
@@ -111,7 +110,7 @@ struct ScheduleRow: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(formatter.formatDate(schedule.date))
+            Text(formatter.formatDate(schedule.wake_time))
                 .font(.system(size: 16))
                 .padding(.vertical, 6)
             HStack {
