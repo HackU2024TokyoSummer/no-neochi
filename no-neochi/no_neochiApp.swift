@@ -25,6 +25,13 @@ class AppDelegate:NSObject,UIApplicationDelegate{
         
         completionHandler([[.banner, .list, .sound]])
     }
+    func application(_ application: UIApplication, continue continueUserActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        // appLinksの場合、activityTypeがNSUserActivityTypeBrowsingWebになる
+        guard  continueUserActivity.activityType == NSUserActivityTypeBrowsingWeb, let url =  continueUserActivity.webpageURL else { return false }
+
+      
+        return true
+    }
 }
 
 @main
@@ -34,9 +41,9 @@ struct no_neochiApp: App {
 
         WindowGroup {
             
-LoginView()
+//LoginView()
 
-       // ButtomNavigationView()
+   ButtomNavigationView()
         }
     }
 }

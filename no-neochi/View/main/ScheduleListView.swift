@@ -9,10 +9,10 @@ import SwiftUI
 import HealthKit
 
 struct ScheduleListView: View {
-  
+    
     @State var isAddEvent = false
     @State var isCredit = false
- 
+    
     @State var schedules = [Schedule]()
     var body: some View {
         NavigationStack {
@@ -33,7 +33,14 @@ struct ScheduleListView: View {
                     ToolbarItem {
                         Button(
                             action: {
-                               isCredit = true
+                                PostCard().request(handler: { result in
+                                    switch result{
+                                    case .success(()):
+                                        print("成功")
+                                    case .failure(let error):
+                                        print(error)
+                                    }
+                                })
                             },
                             label: {
                                 Image(systemName: "person.circle")
@@ -72,23 +79,21 @@ struct ScheduleListView: View {
                 AddEventView()
                     .presentationDetents([.medium])
             }
-            .fullScreenCover(isPresented: $isCredit) {
-               ContentView()
-            }
+            
             .onAppear(){
+                Alerm().playSound()
                 getAllScedule()
                 
                 if(schedules != []){
                     
-               
-                CheckNeochi().checkPermistion()
-                if let rootVC = UIApplication.shared.windows.first?.rootViewController {
-                    CheckNeochi().setObserver(in: rootVC)
-                 //   CheckNeochi().insertSampleData(in: rootVC)
+                    CheckNeochi().checkPermistion()
+                    if let rootVC = UIApplication.shared.windows.first?.rootViewController {
+                        CheckNeochi().setObserver(in: rootVC)
+                        CheckNeochi().insertSampleData(in: rootVC)
+                    }
+                    
                 }
                 
-                }
-             
             }
             
         }
@@ -123,7 +128,7 @@ struct ScheduleRow: View {
                 
                 
                 Text("¥\(schedule.billing)")
-                    .padding(.leading, 116)
+                    .padding(.leading, 140)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

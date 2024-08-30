@@ -26,7 +26,8 @@ class Alerm{
     }
 
     func showAlert(in viewController: UIViewController) {
-        let alert = UIAlertController(title: "アラート", message: "あなたは寝ています！", preferredStyle: .alert)
+        
+        let alert = UIAlertController(title: "アラート", message: "あなたは寝ました！！", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default){ _ in
             
@@ -34,7 +35,7 @@ class Alerm{
                 switch result {
                 case .success(()):
                     print("寝落ち処理完了")
-                case .failure(let error):
+                 case .failure(let error):
                     print("寝落ち処理失敗！")
                 }
                 
@@ -44,15 +45,34 @@ class Alerm{
         
         viewController.present(alert, animated: true, completion: nil)
     }
-    func playSound() {
-           guard let soundURL = Bundle.main.url(forResource: "alertSound", withExtension: "mp3") else {
-               print("音声ファイルが見つかりません")
-               return
-           }
+    
+     func playSound() {
+var player: AVAudioPlayer!
+      
+               // AVAudioSession の設定
+               do {
+                   try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                   try AVAudioSession.sharedInstance().setActive(true)
+               } catch {
+                   print("AVAudioSession の設定エラー: \(error.localizedDescription)")
+                   return
+               }
+               
+               // 音声ファイルのパスを取得
+         let music = NSDataAsset(name: "wakeup")!.data
+               
+               do {
+                  
+                   player = try AVAudioPlayer(data: music)
+                   player.currentTime = 0.0
+                 
+                   player.play()
+               } catch let error as NSError {
+                   print("音声再生エラー: \(error.localizedDescription)")
+                   print("エラーコード: \(error.code)")
+                   print("エラーユーザー情報: \(error.userInfo)")
+               }
            
-           do {
-           } catch {
-               print("音声再生エラー: \(error.localizedDescription)")
-           }
-       }
-}
+     }
+ }
+

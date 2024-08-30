@@ -9,16 +9,40 @@ import Foundation
 import SwiftUI
 import HealthKit
 import HealthKitUI
+import AVFoundation
 class CheckNeochi {
     let healthStore = HKHealthStore()
+    var player: AVAudioPlayer!
+    func playSound() {
+        // AVAudioSession の設定
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("AVAudioSession の設定エラー: \(error.localizedDescription)")
+            return
+        }
+        
+        if let soundURL = Bundle.main.url(forResource: "9", withExtension: "m4a") {
+                do {
+                    player = try AVAudioPlayer(contentsOf: soundURL)
+                    player?.prepareToPlay()
+                    player?.play()
+                } catch {
+                    print("Error playing sound: \(error)")
+                }
+            } else {
+                print("Sound file not found")
+            }
+    }
     func checkPermistion(){
         
         let readTypes = Set([
             HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!
         ])
         let writeTypes = Set([
-              HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!
-          ])
+            HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!
+        ])
         
         healthStore.requestAuthorization(toShare: writeTypes, read: readTypes, completion: { success, error in
             if success == false {
@@ -26,7 +50,7 @@ class CheckNeochi {
                 return
             }else{
                 print("できた！")
-              
+                
             }
             
         })
@@ -58,8 +82,7 @@ class CheckNeochi {
         let sampleType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
         let predicate = HKQuery.predicateForSamples(withStart: Calendar.current.date(byAdding: .hour, value: -1, to: Date())!, end: Date(), options: [])
         
-        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)]) { [weak self] (_, results, error) in
-          
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)]) { [self] (_, results, error) in
             
             if let error = error {
                 print("Query Error: \(error.localizedDescription)")
@@ -75,12 +98,12 @@ class CheckNeochi {
                 if sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue {
                     DispatchQueue.main.async {
                         var components = DateComponents()
-                        components.second = 600 // 5秒後に通知
-                       
-              
-                 Alerm().sendNotification(DateComponents: components)
+                        components.second = 5 // 5秒後に通知
+                        
+                        self.playSound()
+                        Alerm().sendNotification(DateComponents: components)
                         Alerm().showAlert(in: viewController)
-           
+                        
                         print("ベッドにいます！")
                     }
                     return
@@ -91,6 +114,8 @@ class CheckNeochi {
         healthStore.execute(query)
     }
 
+   
+    
     func insertSampleData(in viewController: UIViewController) {
         guard let sleepType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis) else {
             print("Sleep Analysis Type is no longer available in HealthKit")
@@ -117,5 +142,5 @@ class CheckNeochi {
             }
         }
     }
-
+    
 }
