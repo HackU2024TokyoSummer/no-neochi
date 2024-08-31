@@ -18,6 +18,7 @@ struct HistoryView: View {
                     Text("今までの課金額")
                         .padding(.trailing,50)
                     Text("\(totalBilling)円")
+                        .bold()
                     
                 }
                 .padding(.vertical, 30)
@@ -29,7 +30,7 @@ struct HistoryView: View {
                         .shadow(color: Color.main, radius:5, x:0, y:1)
                 )
                 
-                .padding(.bottom, 100)
+                .padding(.bottom, 40)
                 List(histories){ history in
                     VStack{
                         HStack{

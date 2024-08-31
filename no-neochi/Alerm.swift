@@ -27,7 +27,7 @@ class Alerm{
 
     func showAlert(in viewController: UIViewController) {
         
-        let alert = UIAlertController(title: "アラート", message: "あなたは寝ました！！", preferredStyle: .alert)
+        let alert = UIAlertController(title: "寝落ち", message: "あなたは寝ました！！課金されます", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default){ _ in
             

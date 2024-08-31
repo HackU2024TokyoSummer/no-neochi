@@ -12,6 +12,7 @@ struct AddEventView: View {
     @State var selectedMoney = 100
     @State var formatter = Formatter()
     @State var moneys = 50.0
+    @State var isAlert = false
     @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationStack {
@@ -52,19 +53,26 @@ struct AddEventView: View {
             .toolbar {
                 Button(
                     action: {
+                        
                         let maxBilling =   UserDefaults.standard.value(forKey: "maxBilling")
                         let billing = maxBilling as! Double * (moneys/100)
-                        let schedule = Schedule(wake_time: date, billing: Int(billing))
-                        CreateScedule().request(handler: {result  in
-                            switch result {
-                            case .success(let data):
-                                print("成功！")
-                                
-                            case .failure(let error):
-                                print("失敗！",error)
-                            }
-                        }, schedule: schedule)
-                        dismiss()
+                        if (billing >= 1000){
+                            isAlert = true
+                            
+                        }else{
+                            let schedule = Schedule(wake_time: date, billing: Int(billing))
+                            CreateScedule().request(handler: {result  in
+                                switch result {
+                                case .success(let data):
+                                    print("成功！")
+                                    
+                                case .failure(let error):
+                                    print("失敗！",error)
+                                }
+                            }, schedule: schedule)
+                            
+                            dismiss()
+                        }
                     },
                     label: {
                         Text("登録")
@@ -83,9 +91,39 @@ struct AddEventView: View {
                         })
                 }
             }
+            .alert("", isPresented: $isAlert){
+                Button(action: {
+                    let maxBilling =   UserDefaults.standard.value(forKey: "maxBilling")
+                    let billing = maxBilling as! Double * (moneys/100)
+                    
+                    let schedule = Schedule(wake_time: date, billing: Int(billing))
+                    CreateScedule().request(handler: {result  in
+                        switch result {
+                        case .success(let data):
+                            print("成功！")
+                            
+                        case .failure(let error):
+                            print("失敗！",error)
+                        }
+                    }, schedule: schedule)
+                    dismiss()
+                    
+                }, label: {
+                    
+                    
+                    Text("はい")
+                    
+                    
+                    
+                })
+                
+            } message: {
+                Text("1000円を超えますが本当にいいですか？")
+            }
         }
     }
 }
+
 
 #Preview {
     AddEventView()
