@@ -6,13 +6,14 @@
 //
 
 import Foundation
+
 typealias ResultHandler<T> = (Result<T, APIError>) -> Void
 class NetworkConstants: NSObject {
 
-  // MARK: - Variables
+    // MARK: - Variables
 
-  static var baseURL: String = {
-    return "https://neoti-api-668f813a2c04.herokuapp.com/"
-  }()
+    static var baseURL: String = {
+        return "https://neoti-api-668f813a2c04.herokuapp.com/"
+    }()
 
 }

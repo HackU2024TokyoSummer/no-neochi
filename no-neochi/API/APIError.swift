@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 enum APIError: Error {
     case invalidURL
     case invalidResponse(Error)
@@ -14,7 +15,7 @@ enum APIError: Error {
 }
 
 extension APIError {
-    
+
     var title: String {
         switch self {
         case .invalidResponse(let error): return "無効なレスポンスです。\(error)"
@@ -23,5 +24,5 @@ extension APIError {
         case .unknown(let error): return "予期せぬエラーが発生しました。\(error)"
         }
     }
-    
+
 }

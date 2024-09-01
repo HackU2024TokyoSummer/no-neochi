@@ -6,9 +6,10 @@
 //
 
 import Foundation
+
 struct Credit {
     var number: Int
     var name: String
     var seacret: Int
-    
+
 }

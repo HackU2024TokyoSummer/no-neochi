@@ -6,7 +6,8 @@
 //
 
 import Foundation
-struct History: Identifiable, Decodable{
+
+struct History: Identifiable, Decodable {
     var id = Int()
     var wake_time: Date
     var billing: Int
