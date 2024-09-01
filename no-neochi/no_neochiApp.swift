@@ -37,6 +37,7 @@ class AppDelegate:NSObject,UIApplicationDelegate{
 @main
 struct no_neochiApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject private var scheduleList = ScheduleList()
     var body: some Scene {
 
         WindowGroup {
@@ -44,6 +45,7 @@ struct no_neochiApp: App {
 //LoginView()
 
    ButtomNavigationView()
+                .environmentObject(scheduleList)
         }
     }
 }

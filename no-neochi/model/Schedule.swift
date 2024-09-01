@@ -11,6 +11,8 @@ struct Schedule: Identifiable, Decodable, Equatable {
     var id = Int()
     var wake_time : Date
     var billing : Int
+    var access_id: String
+    var order_id: String
     
 }
 extension Schedule {

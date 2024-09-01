@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		720EF40A2C7AB3790065D375 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720EF4092C7AB3790065D375 /* LoginView.swift */; };
 		7230A3062C8245EF00E1277D /* PostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7230A3052C8245EF00E1277D /* PostCard.swift */; };
-		7230A3082C8251F900E1277D /* wakeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7230A3072C8251F800E1277D /* wakeup.mp3 */; };
 		7230A30A2C825E6A00E1277D /* wake.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7230A3092C825E6A00E1277D /* wake.mp3 */; };
+		7230A30D2C82C55D00E1277D /* PutRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7230A30C2C82C55D00E1277D /* PutRegister.swift */; };
+		7230A30F2C82ED9600E1277D /* 早く起きなさい.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7230A30E2C82ED9600E1277D /* 早く起きなさい.wav */; };
 		7238BDA32C806AF0007F4A4A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDA22C806AF0007F4A4A /* Login.swift */; };
 		7238BDA52C806C18007F4A4A /* SignUpTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238BDA42C806C18007F4A4A /* SignUpTextView.swift */; };
 		7238BDA82C808099007F4A4A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7238BDA72C808099007F4A4A /* Alamofire */; };
@@ -55,8 +56,9 @@
 /* Begin PBXFileReference section */
 		720EF4092C7AB3790065D375 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7230A3052C8245EF00E1277D /* PostCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCard.swift; sourceTree = "<group>"; };
-		7230A3072C8251F800E1277D /* wakeup.mp3 */ = {isa = PBXFileReference; explicitFileType = audio.mp3; path = wakeup.mp3; sourceTree = "<group>"; };
 		7230A3092C825E6A00E1277D /* wake.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wake.mp3; sourceTree = "<group>"; };
+		7230A30C2C82C55D00E1277D /* PutRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutRegister.swift; sourceTree = "<group>"; };
+		7230A30E2C82ED9600E1277D /* 早く起きなさい.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "早く起きなさい.wav"; sourceTree = "<group>"; };
 		7238BDA22C806AF0007F4A4A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7238BDA42C806C18007F4A4A /* SignUpTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextView.swift; sourceTree = "<group>"; };
 		7238BDAA2C8080F5007F4A4A /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				72E2D9302C82083300D69270 /* PutNeochi.swift */,
 				72E2D9332C8216F500D69270 /* PostCustomer.swift */,
 				7230A3052C8245EF00E1277D /* PostCard.swift */,
+				7230A30C2C82C55D00E1277D /* PutRegister.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -173,7 +176,7 @@
 				72A8E9312C79C48D0058AA93 /* model */,
 				72A8E9052C779A3C0058AA93 /* no_neochiApp.swift */,
 				72A8E9092C779A3D0058AA93 /* Assets.xcassets */,
-				7230A3072C8251F800E1277D /* wakeup.mp3 */,
+				7230A30E2C82ED9600E1277D /* 早く起きなさい.wav */,
 				72A8E90B2C779A3D0058AA93 /* Preview Content */,
 				72A8E92F2C795B160058AA93 /* ButtomNavigationView.swift */,
 				72EB85CF2C7A4C9D00C673E4 /* formatter.swift */,
@@ -298,9 +301,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7230A3082C8251F900E1277D /* wakeup.mp3 in Resources */,
 				72A8E90D2C779A3D0058AA93 /* Preview Assets.xcassets in Resources */,
 				7230A30A2C825E6A00E1277D /* wake.mp3 in Resources */,
+				7230A30F2C82ED9600E1277D /* 早く起きなさい.wav in Resources */,
 				72A8E90A2C779A3D0058AA93 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +339,7 @@
 				72E2D9312C82083300D69270 /* PutNeochi.swift in Sources */,
 				72A8E9332C79C4E30058AA93 /* Schedule.swift in Sources */,
 				72A8E9062C779A3C0058AA93 /* no_neochiApp.swift in Sources */,
+				7230A30D2C82C55D00E1277D /* PutRegister.swift in Sources */,
 				72E2D9382C821E5B00D69270 /* Credit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

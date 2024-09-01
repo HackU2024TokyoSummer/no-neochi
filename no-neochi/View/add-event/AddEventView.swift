@@ -32,7 +32,7 @@ struct AddEventView: View {
                 .border(Color.main)
                 
                 HStack {
-                    Text("大事度")
+                    Text("起きたい度")
                     
                     Slider(value: $moneys,
                            in: 0...100)
@@ -60,7 +60,7 @@ struct AddEventView: View {
                             isAlert = true
                             
                         }else{
-                            let schedule = Schedule(wake_time: date, billing: Int(billing))
+                            let schedule = Schedule(wake_time: date, billing: Int(billing),access_id: "", order_id: "")
                             CreateScedule().request(handler: {result  in
                                 switch result {
                                 case .success(let data):
@@ -96,7 +96,7 @@ struct AddEventView: View {
                     let maxBilling =   UserDefaults.standard.value(forKey: "maxBilling")
                     let billing = maxBilling as! Double * (moneys/100)
                     
-                    let schedule = Schedule(wake_time: date, billing: Int(billing))
+                    let schedule = Schedule(wake_time: date, billing: Int(billing),access_id: "", order_id: "")
                     CreateScedule().request(handler: {result  in
                         switch result {
                         case .success(let data):

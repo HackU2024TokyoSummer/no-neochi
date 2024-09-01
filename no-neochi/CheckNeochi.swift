@@ -10,31 +10,51 @@ import SwiftUI
 import HealthKit
 import HealthKitUI
 import AVFoundation
-class CheckNeochi {
+class CheckNeochi:ObservableObject {
     let healthStore = HKHealthStore()
     var player: AVAudioPlayer!
+    @EnvironmentObject var scheduleList: ScheduleList
+    @Published var isSleepAlart = false
+    var audioEngine: AVAudioEngine
+    var audioPlayerNode: AVAudioPlayerNode
+    init() {
+           self.audioEngine = AVAudioEngine()
+           self.audioPlayerNode = AVAudioPlayerNode()
+           
+           self.audioEngine.attach(self.audioPlayerNode)
+           self.audioEngine.connect(self.audioPlayerNode, to: self.audioEngine.mainMixerNode, format: nil)
+           
+           do {
+               try self.audioEngine.start()
+               print("Audio engine started successfully")
+           } catch {
+               print("Failed to start audio engine: \(error.localizedDescription)")
+           }
+       }
+    
     func playSound() {
-        // AVAudioSession の設定
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            print("AVAudioSession の設定エラー: \(error.localizedDescription)")
-            return
-        }
-        
-        if let soundURL = Bundle.main.url(forResource: "9", withExtension: "m4a") {
-                do {
-                    player = try AVAudioPlayer(contentsOf: soundURL)
-                    player?.prepareToPlay()
-                    player?.play()
-                } catch {
-                    print("Error playing sound: \(error)")
-                }
-            } else {
-                print("Sound file not found")
+            guard let url = Bundle.main.url(forResource: "早く起きなさい", withExtension: "wav") else {
+                print("Sound file not found. Bundle path: \(Bundle.main.bundlePath)")
+                return
             }
-    }
+            
+            do {
+                let file = try AVAudioFile(forReading: url)
+                self.audioPlayerNode.scheduleFile(file, at: nil)
+                
+                if !self.audioEngine.isRunning {
+                    try self.audioEngine.start()
+                }
+                
+                self.audioPlayerNode.play()
+                print("Sound played successfully")
+            } catch {
+                print("Error playing sound: \(error.localizedDescription)")
+            }
+        }
+    
+    
+
     func checkPermistion(){
         
         let readTypes = Set([
@@ -55,7 +75,7 @@ class CheckNeochi {
             
         })
     }
-    func setObserver(in viewController: UIViewController) {
+    func setObserver(in viewController: UIViewController,scedule: Schedule) {
         let sampleType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
         let observerQuery = HKObserverQuery(sampleType: sampleType, predicate: nil) { [weak self] query, completionHandler, error in
             guard let self = self else { return }
@@ -65,7 +85,7 @@ class CheckNeochi {
                 return
             }
             
-            self.checkRecentSleepData(in: viewController)
+            self.checkRecentSleepData(in: viewController, scedule: scedule)
             completionHandler()
         }
         
@@ -78,7 +98,7 @@ class CheckNeochi {
         }
     }
     
-    func checkRecentSleepData(in viewController: UIViewController) {
+    func checkRecentSleepData(in viewController: UIViewController, scedule: Schedule) {
         let sampleType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
         let predicate = HKQuery.predicateForSamples(withStart: Calendar.current.date(byAdding: .hour, value: -1, to: Date())!, end: Date(), options: [])
         
@@ -102,7 +122,8 @@ class CheckNeochi {
                         
                         self.playSound()
                         Alerm().sendNotification(DateComponents: components)
-                        Alerm().showAlert(in: viewController)
+                        self.isSleepAlart = true
+                        Alerm().showAlert(in: viewController, scedule: scedule)
                         
                         print("ベッドにいます！")
                     }
@@ -116,7 +137,7 @@ class CheckNeochi {
 
    
     
-    func insertSampleData(in viewController: UIViewController) {
+    func insertSampleData(in viewController: UIViewController,scedule: Schedule) {
         guard let sleepType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis) else {
             print("Sleep Analysis Type is no longer available in HealthKit")
             return
@@ -137,7 +158,7 @@ class CheckNeochi {
             if let error = error {
                 print("Error saving sample: \(error.localizedDescription)")
             } else {
-                self.checkRecentSleepData(in: viewController)
+                self.checkRecentSleepData(in: viewController, scedule: scedule)
                 print("Sample saved successfully: \(success)")
             }
         }

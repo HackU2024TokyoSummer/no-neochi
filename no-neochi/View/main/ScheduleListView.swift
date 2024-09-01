@@ -12,12 +12,15 @@ struct ScheduleListView: View {
     
     @State var isAddEvent = false
     @State var isCredit = false
+    @StateObject var checkNeochi = CheckNeochi()
+    @State var isNeochi = false
+    @EnvironmentObject var scheduleList: ScheduleList
     
-    @State var schedules = [Schedule]()
+//    @State var schedules = [Schedule]()
     var body: some View {
         NavigationStack {
             ZStack {
-                List(schedules) { schedule in
+                List(scheduleList.schedules) { schedule in
                     ScheduleRow(schedule: schedule)
                         .listRowSeparator(.hidden)
                     
@@ -80,16 +83,18 @@ struct ScheduleListView: View {
                     .presentationDetents([.medium])
             }
             
+            
             .onAppear(){
-                Alerm().playSound()
                 getAllScedule()
-                
-                if(schedules != []){
-                    
+             
+                if(scheduleList.schedules != []){
+         
                     CheckNeochi().checkPermistion()
                     if let rootVC = UIApplication.shared.windows.first?.rootViewController {
-                        CheckNeochi().setObserver(in: rootVC)
-                        CheckNeochi().insertSampleData(in: rootVC)
+                        CheckNeochi().setObserver(in: rootVC, scedule: scheduleList.schedules.first!)
+                        CheckNeochi().insertSampleData(in: rootVC, scedule: scheduleList.schedules.first!)
+                   
+                     
                     }
                     
                 }
@@ -102,7 +107,9 @@ struct ScheduleListView: View {
         GetScedule().request(handler: {result in
             switch result{
             case .success(let data):
-                schedules = data
+                DispatchQueue.main.async {
+                    self.scheduleList.schedules = data
+                }
                 print(data)
                 print("成功！")
             case.failure(let error):
@@ -143,3 +150,7 @@ struct ScheduleRow: View {
     }
     
 }
+class ScheduleList: ObservableObject {
+    @Published var schedules: [Schedule] = []
+}
+
